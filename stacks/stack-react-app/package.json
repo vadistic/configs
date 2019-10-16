@@ -1,0 +1,17 @@
+{
+  "name": "@vadistic/stack-react-app",
+  "description": "React app stack",
+  "repository": "https://github.com/vadistic/utils",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": false,
+  "scripts": {},
+  "engines": {
+    "node": ">= 10.x"
+  },
+  "dependencies": {
+    "plop": "^2.4.0"
+  },
+  "devDependencies": {}
+}

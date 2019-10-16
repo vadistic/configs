@@ -1,0 +1,13 @@
+{
+  "name": "@vadistic/stack-ts-app",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": false,
+  "scripts": {},
+  "engines": {
+    "node": ">= 10.x"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

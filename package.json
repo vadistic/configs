@@ -1,0 +1,20 @@
+{
+  "name": "@vadistic/utils",
+  "version": "0.1.0",
+  "description": "Personal boilerplate & configs",
+  "main": "index.js",
+  "repository": "https://github.com/vadistic/utils",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "stacks/*",
+    "scripts"
+  ],
+  "devDependencies": {
+    "lerna": "^3.18.1",
+    "plop": "^2.4.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  }
+}
