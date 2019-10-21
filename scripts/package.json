@@ -7,6 +7,9 @@
   "bin": {
     "create-monorepo": "./cli.js"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "cli": "node ./cli.js"
   },

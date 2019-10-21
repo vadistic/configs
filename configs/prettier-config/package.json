@@ -10,6 +10,9 @@
   },
   "main": "prettier.config.js",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "prettier": "*"
   }

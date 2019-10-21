@@ -10,6 +10,9 @@
   },
   "main": ".eslintrc.js",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@vadistic/eslint-config-node": "0.1.0",
     "@typescript-eslint/eslint-plugin": "*",

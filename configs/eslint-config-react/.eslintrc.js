@@ -9,15 +9,9 @@ module.exports = {
     },
   },
 
-  extends: [
-    '@vadistic/eslint-config-node',
-    'plugin:react/recommended',
-  ],
+  extends: ['@vadistic/eslint-config-node', 'plugin:react/recommended'],
 
-  plugins: [
-    'eslint-plugin-react',
-    'eslint-plugin-react-hooks',
-  ],
+  plugins: ['eslint-plugin-react', 'eslint-plugin-react-hooks'],
 
   settings: {
     react: {
