@@ -2,7 +2,7 @@
   "name": "@vadistic/stack-ts-lib",
   "description": "Personal @vadistic utils - stack for typescript library",
   "author": "Jakub Wadas <vadistic@gmail.com>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "homepage": "https://vadistic.netlify.com",
   "repository": {
@@ -16,9 +16,9 @@
   },
   "scripts": {},
   "dependencies": {
-    "@vadistic/eslint-config-node": "0.1.0",
-    "@vadistic/prettier-config": "0.1.0",
-    "@vadistic/scripts": "0.1.0",
+    "@vadistic/eslint-config-node": "^0.1.1",
+    "@vadistic/prettier-config": "^0.1.1",
+    "@vadistic/scripts": "^0.1.1",
     "plop": "*",
     "typescript": "*"
   }

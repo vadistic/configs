@@ -1,7 +1,7 @@
 {
   "name": "@vadistic/eslint-config-react",
   "description": "Personal @vadistic utils - eslint config react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "homepage": "https://vadistic.netlify.com",
   "repository": {
@@ -14,15 +14,15 @@
     "access": "public"
   },
   "dependencies": {
-    "@vadistic/eslint-config-node": "0.1.0",
     "@typescript-eslint/eslint-plugin": "*",
     "@typescript-eslint/parser": "*",
+    "@vadistic/eslint-config-node": "^0.1.1",
+    "eslint": "*",
     "eslint-config-prettier": "*",
     "eslint-plugin-import": "*",
     "eslint-plugin-prettier": "*",
-    "eslint-plugin-react-hooks": "*",
     "eslint-plugin-react": "*",
-    "eslint": "*",
+    "eslint-plugin-react-hooks": "*",
     "prettier": "*",
     "typescript": "*"
   }

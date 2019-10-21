@@ -2,7 +2,7 @@
   "name": "@vadistic/fixture-monorepo",
   "description": "x",
   "author": "Jakub Wadas <vadistic@gmail.com>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "homepage": "https://x",
   "repository": {
@@ -14,9 +14,8 @@
   "workspaces": [
     "packages/*"
   ],
-  "dependencies": {},
   "devDependencies": {
-    "@vadistic/stack-monorepo": "0.1.0",
+    "@vadistic/stack-monorepo": "^0.1.1",
     "eslint": "^6.5.0",
     "jest": "^24.9.0",
     "lerna": "^3.17.0",
