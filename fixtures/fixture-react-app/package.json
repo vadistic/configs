@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "homepage": "https://x",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/vadistic/x"

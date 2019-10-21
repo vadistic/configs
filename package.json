@@ -14,7 +14,8 @@
     "generate": "plop all",
     "format": "prettier --config prettier.config.js --write './**.{js,ts,jsx,tsx,json}*'",
     "lint": "yarn eslint --ext .js --ext .ts --ext .tsx fixtures scripts",
-    "prepare": "yarn format  && yarn lint && yarn generate"
+    "prepare": "yarn format  && yarn lint && yarn generate",
+    "publish": "yarn lerna publish --registry https://npm.pkg.github.com/vadistic"
   },
   "workspaces": [
     "stacks/*",

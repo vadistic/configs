@@ -5,6 +5,7 @@
   "version": "{{ version }}",
   "license": "{{ license }}",
   "homepage": "{{ homepage }}",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "{{ repository }}"
