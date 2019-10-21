@@ -1,19 +1,31 @@
 {
-  "name": "@vadistic/utils",
-  "version": "0.1.0",
-  "description": "Personal boilerplate & configs",
-  "main": "index.js",
-  "repository": "https://github.com/vadistic/utils",
+  "name": "@vadistic/stack-react-lib",
+  "description": "Personal @vadistic utils - scaffolding & configs for react & node monorepos with typescript",
   "author": "Jakub Wadas <vadistic@gmail.com>",
+  "version": "0.1.0",
   "license": "MIT",
+  "homepage": "https://vadistic.netlify.com",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vadistic/utils"
+  },
+  "scripts": {
+    "generate": "plop all",
+    "prepare": "generate"
+  },
   "workspaces": [
     "stacks/*",
+    "fixtures/*",
+    "configs/*",
     "scripts"
   ],
-  "devDependencies": {
+  "dependencies": {
+    "@vadistic/eslint-config-react": "file:configs/eslint-config-react",
+    "@vadistic/prettier-config": "file:configs/prettier-config",
     "lerna": "^3.18.1",
-    "plop": "^2.4.0",
+    "plop": "^2.5.2",
+    "prettier": "^1.18.2",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.4"
   }

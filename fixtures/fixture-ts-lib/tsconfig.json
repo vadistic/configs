@@ -1,0 +1,14 @@
+{
+  "extends": "../fixture-monorepo/tsconfig.json",
+  "compilerOptions": {
+    "target": "es2018",
+    "lib": ["es2018"],
+
+    "incremental": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "removeComments": true
+  },
+  "exclude": ["node_modules", "dist"]
+}

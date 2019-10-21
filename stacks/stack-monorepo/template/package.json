@@ -1,0 +1,27 @@
+{
+  "name": "{{ name }}",
+  "description": "{{ description }}",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "version": "{{ version }}",
+  "license": "{{ license }}",
+  "homepage": "{{ homepage }}",
+  "repository": {
+    "type": "git",
+    "url": "{{ repository }}"
+  },
+  "private": true,
+  "scripts": {},
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@vadistic/stack-monorepo": "0.1.0",
+    "eslint": "^6.5.0",
+    "jest": "^24.9.0",
+    "lerna": "^3.17.0",
+    "plop": "^2.4.0",
+    "prettier": "^1.18.2",
+    "typescript": "^3.6.4"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@vadistic/fixture-ts-app",
+  "description": "x",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "version": "0.1.0",
+  "license": "MIT",
+  "homepage": "https://x",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vadistic/x"
+  },
+  "private": true,
+  "engines": {
+    "node": ">= 10.x"
+  },
+  "dependencies": {
+    "@vadistic/stack-ts-app": "0.1.0",
+    "plop": "^2.4.0",
+    "typescript": "^3.6.4"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,27 @@
+{
+  "name": "@vadistic/fixture-react-lib",
+  "description": "x",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "version": "0.1.0",
+  "license": "MIT",
+  "homepage": "https://x",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vadistic/x"
+  },
+  "main": "dist/index.js",
+  "module": "",
+  "types": "dist/index.d.ts",
+  "private": true,
+  "dependencies": {
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.9",
+    "@types/react-dom": "^16.9.2",
+    "@vadistic/stack-react-lib": "0.1.0",
+    "plop": "^2.4.0",
+    "typescript": "^3.6.4"
+  }
+}

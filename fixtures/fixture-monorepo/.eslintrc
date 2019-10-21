@@ -1,0 +1,7 @@
+{
+  "extends": "@vadistic/eslint-config-react",
+
+  "rules": {
+    /* noop */
+  }
+}

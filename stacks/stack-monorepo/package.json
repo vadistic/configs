@@ -1,13 +1,36 @@
 {
   "name": "@vadistic/stack-monorepo",
+  "description": "Personal @vadistic utils - stack for monorepo",
   "author": "Jakub Wadas <vadistic@gmail.com>",
   "version": "0.1.0",
   "license": "MIT",
+  "homepage": "https://vadistic.netlify.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vadistic/utils"
+  },
+  "main": "index.js",
   "private": false,
   "scripts": {},
-  "engines": {
-    "node": ">= 10.x"
-  },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "@types/jest": "*",
+    "@types/node": "*",
+    "@vadistic/eslint-config-react": "0.1.0",
+    "@vadistic/prettier-config": "0.1.0",
+    "@vadistic/scripts": "0.1.0",
+    "@vadistic/stack-react-app": "0.1.0",
+    "@vadistic/stack-react-lib": "0.1.0",
+    "@vadistic/stack-ts-app": "0.1.0",
+    "@vadistic/stack-ts-lib": "0.1.0",
+    "jest": "*",
+    "lerna": "*",
+    "node-plop": "^0.22.0",
+    "plop": "*",
+    "ts-jest": "*",
+    "ts-node": "*",
+    "ts-node-dev": "1.0.0-pre.43",
+    "tsc-watch": "*",
+    "tsconfig-paths": "*",
+    "typescript": "*"
+  }
 }

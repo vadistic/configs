@@ -1,0 +1,32 @@
+{
+  "name": "{{ name }}",
+  "description": "{{ description }}",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "version": "{{ version }}",
+  "license": "{{ license }}",
+  "homepage": "{{ homepage }}",
+  "repository": {
+    "type": "git",
+    "url": "{{ repository }}"
+  },
+  "scripts": {},
+  "dependencies": {
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.9",
+    "@types/react-dom": "^16.9.2",
+    "@vadistic/stack-react-app": "0.1.0",
+    "plop": "^2.4.0",
+    "typescript": "^3.6.4"
+  },
+  "browserslist": {
+    "production": [
+      "cover 99.5%"
+    ],
+    "development": [
+      "last 2 chrome versions"
+    ]
+  }
+}

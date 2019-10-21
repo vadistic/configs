@@ -1,0 +1,21 @@
+{
+  "name": "@vadistic/scripts",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": false,
+  "bin": {
+    "create-monorepo": "./cli.js"
+  },
+  "scripts": {
+    "cli": "node ./cli.js"
+  },
+  "dependencies": {
+    "@vadistic/eslint-config-react": "0.1.0",
+    "@vadistic/prettier-config": "0.1.0",
+    "node-plop": "^0.22.0",
+    "ts-node": "*",
+    "typescript": "*"
+  },
+  "devDependencies": {}
+}

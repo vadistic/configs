@@ -1,0 +1,16 @@
+{
+  "extends": "{{ tsconfigExtends }}",
+  "compilerOptions": {
+    "module": "commonjs",
+
+    "target": "es2018",
+    "lib": ["es2018"],
+
+    "incremental": true,
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": true,
+    "removeComments": true
+  },
+  "exclude": ["node_modules", "build", "dist"]
+}

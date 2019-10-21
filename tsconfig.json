@@ -6,11 +6,8 @@
     "target": "es2018",
     "lib": ["es2018"],
 
-    "incremental": true,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "removeComments": true,
+    "allowJs": true,
+    "noEmit": true,
 
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,

@@ -1,0 +1,18 @@
+{
+  "extends": "../fixture-monorepo/tsconfig.json",
+  "compilerOptions": {
+    "module": "esnext",
+
+    "target": "esnext",
+    "lib": ["dom", "esnext"],
+
+    "jsx": "react",
+
+    "incremental": true,
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": true,
+    "removeComments": true
+  },
+  "exclude": ["node_modules", "build", "dist"]
+}
