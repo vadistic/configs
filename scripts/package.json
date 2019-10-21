@@ -1,7 +1,7 @@
 {
   "name": "@vadistic/scripts",
   "author": "Jakub Wadas <vadistic@gmail.com>",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "private": false,
   "bin": {
@@ -14,8 +14,8 @@
     "cli": "node ./cli.js"
   },
   "dependencies": {
-    "@vadistic/eslint-config-react": "^0.1.1",
-    "@vadistic/prettier-config": "^0.1.1",
+    "@vadistic/eslint-config-react": "^0.1.2",
+    "@vadistic/prettier-config": "^0.1.2",
     "node-plop": "^0.22.0",
     "ts-node": "*",
     "typescript": "*"

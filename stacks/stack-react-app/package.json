@@ -2,7 +2,7 @@
   "name": "@vadistic/stack-react-app",
   "description": "Personal @vadistic utils - stack for react application",
   "author": "Jakub Wadas <vadistic@gmail.com>",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "homepage": "https://vadistic.netlify.com",
   "repository": {
@@ -13,9 +13,9 @@
   "private": false,
   "scripts": {},
   "dependencies": {
-    "@vadistic/eslint-config-react": "^0.1.1",
-    "@vadistic/prettier-config": "^0.1.1",
-    "@vadistic/scripts": "^0.1.1",
+    "@vadistic/eslint-config-react": "^0.1.2",
+    "@vadistic/prettier-config": "^0.1.2",
+    "@vadistic/scripts": "^0.1.2",
     "plop": "^2.4.0",
     "react": "*",
     "react-dom": "*",
