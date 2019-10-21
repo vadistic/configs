@@ -2,7 +2,6 @@
   "name": "@vadistic/stack-react-lib",
   "description": "Personal @vadistic utils - scaffolding & configs for react & node monorepos with typescript",
   "author": "Jakub Wadas <vadistic@gmail.com>",
-  "version": "0.1.0",
   "license": "MIT",
   "homepage": "https://vadistic.netlify.com",
   "private": true,
