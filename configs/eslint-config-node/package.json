@@ -15,7 +15,7 @@
     "registry": "https://npm.pkg.github.com/vadistic"
   },
   "scripts": {
-    "publish": "npm publish"
+    "run:publish": "npm publish"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "*",
