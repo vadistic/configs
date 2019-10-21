@@ -13,10 +13,8 @@
   "types": "dist/index.d.ts",
   "private": false,
   "scripts": {},
-  "dependencies": {},
-  "peerDependencies": {},
   "devDependencies": {
-    "@vadistic/stack-ts-lib": "0.1.0",
+    "@vadistic/stack-ts-lib": "^0.1.2",
     "plop": "^2.4.0",
     "typescript": "^3.6.4"
   }

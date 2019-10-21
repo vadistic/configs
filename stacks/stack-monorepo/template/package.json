@@ -14,9 +14,8 @@
   "workspaces": [
     "packages/*"
   ],
-  "dependencies": {},
   "devDependencies": {
-    "@vadistic/stack-monorepo": "0.1.0",
+    "@vadistic/stack-monorepo": "^0.1.2",
     "eslint": "^6.5.0",
     "jest": "^24.9.0",
     "lerna": "^3.17.0",

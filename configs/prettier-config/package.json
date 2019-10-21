@@ -11,13 +11,13 @@
   "main": "prettier.config.js",
   "private": false,
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/vadistic"
   },
   "scripts": {
     "publish": "yarn publish"
   },
   "dependencies": {
     "prettier": "*"
-  },
-  "gitHead": "6e302e91f9844bbefd5496394da16a9b539fbfdd"
+  }
 }
