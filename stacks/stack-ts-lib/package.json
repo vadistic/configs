@@ -14,7 +14,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {},
+  "scripts": {
+    "publish": "yarn publish"
+  },
   "dependencies": {
     "@vadistic/eslint-config-node": "^0.1.2",
     "@vadistic/prettier-config": "^0.1.2",

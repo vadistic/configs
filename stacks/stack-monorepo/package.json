@@ -14,7 +14,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {},
+  "scripts": {
+    "publish": "yarn publish"
+  },
   "dependencies": {
     "@types/jest": "*",
     "@types/node": "*",
