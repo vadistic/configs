@@ -8,12 +8,12 @@
     "type": "git",
     "url": "https://github.com/vadistic/utils"
   },
-  "main": "prettier.config.js",
   "private": false,
   "publishConfig": {
     "access": "public",
     "registry": "https://npm.pkg.github.com/vadistic"
   },
+  "main": "prettier.config.js",
   "scripts": {
     "run:publish": "npm publish"
   },
