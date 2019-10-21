@@ -19,5 +19,6 @@
     "node-plop": "^0.22.0",
     "ts-node": "*",
     "typescript": "*"
-  }
+  },
+  "gitHead": "6e302e91f9844bbefd5496394da16a9b539fbfdd"
 }

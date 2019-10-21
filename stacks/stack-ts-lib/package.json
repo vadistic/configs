@@ -21,5 +21,6 @@
     "@vadistic/scripts": "^0.1.1",
     "plop": "*",
     "typescript": "*"
-  }
+  },
+  "gitHead": "6e302e91f9844bbefd5496394da16a9b539fbfdd"
 }

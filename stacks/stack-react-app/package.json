@@ -20,5 +20,6 @@
     "react": "*",
     "react-dom": "*",
     "typescript": "^3.6.4"
-  }
+  },
+  "gitHead": "6e302e91f9844bbefd5496394da16a9b539fbfdd"
 }

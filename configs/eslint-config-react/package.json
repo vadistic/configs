@@ -25,5 +25,6 @@
     "eslint-plugin-react-hooks": "*",
     "prettier": "*",
     "typescript": "*"
-  }
+  },
+  "gitHead": "6e302e91f9844bbefd5496394da16a9b539fbfdd"
 }
