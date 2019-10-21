@@ -2,7 +2,7 @@
   "name": "@vadistic/fixture-react-lib",
   "description": "x",
   "author": "Jakub Wadas <vadistic@gmail.com>",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
   "homepage": "https://x",
   "repository": {
@@ -20,7 +20,7 @@
   "devDependencies": {
     "@types/react": "^16.9.9",
     "@types/react-dom": "^16.9.2",
-    "@vadistic/stack-react-lib": "^0.1.2",
+    "@vadistic/stack-react-lib": "^0.1.3",
     "plop": "^2.4.0",
     "typescript": "^3.6.4"
   }

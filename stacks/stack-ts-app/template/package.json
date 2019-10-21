@@ -14,7 +14,7 @@
     "node": ">= 10.x"
   },
   "dependencies": {
-    "@vadistic/stack-ts-app": "^0.1.2",
+    "@vadistic/stack-ts-app": "^0.1.3",
     "plop": "^2.4.0",
     "typescript": "^3.6.4"
   }
