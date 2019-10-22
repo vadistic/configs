@@ -1,6 +1,10 @@
 {
-  "version": "0.1.3",
-  "packages": ["fixtures/*", "configs/*", "scripts"],
+  "version": "0.1.4",
+  "packages": [
+    "fixtures/*",
+    "configs/*",
+    "scripts"
+  ],
   "npmClient": "yarn",
   "useWorkspaces": true
 }
