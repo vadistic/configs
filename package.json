@@ -7,7 +7,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/vadistic/utils"
+    "url": "https://github.com/vadistic/workspace"
   },
   "scripts": {
     "format": "prettier --config prettier.config.js --write './**.{js,ts,jsx,tsx,json}*'",
