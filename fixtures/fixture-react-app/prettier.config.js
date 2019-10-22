@@ -1,1 +1,1 @@
-module.exports = require('../fixture-monorepo/prettier.config.js')
+module.exports = require('../../prettier.config.js')

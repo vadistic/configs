@@ -14,8 +14,6 @@
   "types": "dist/index.d.ts",
   "scripts": {},
   "devDependencies": {
-    "@vadistic/stack-ts-lib": "^0.1.3",
-    "plop": "^2.4.0",
     "typescript": "^3.6.4"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "extends": "@vadistic/eslint-config-react",
+  "extends": "@vadistic/eslint-config-base",
 
   "rules": {
     /* noop */

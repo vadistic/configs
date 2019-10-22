@@ -10,14 +10,13 @@
   },
   "private": false,
   "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com/vadistic"
+    "access": "public"
   },
-  "main": "prettier.config.js",
+  "main": "index.js",
   "scripts": {
     "run:publish": "npm publish"
   },
-  "dependencies": {
+  "peerDependencies": {
     "prettier": "*"
   }
 }

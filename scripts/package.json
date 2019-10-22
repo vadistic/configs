@@ -1,33 +1,20 @@
 {
   "name": "@vadistic/scripts",
-  "description": "Personal @vadistic utils - monorepo scripts",
+  "description": "Personal @vadistic utils",
   "author": "Jakub Wadas <vadistic@gmail.com>",
   "version": "0.1.3",
   "license": "MIT",
   "homepage": "https://vadistic.netlify.com",
-  "private": false,
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/vadistic/utils"
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com/vadistic"
-  },
-  "main": "index.js",
-  "bin": {
-    "create-monorepo": "./cli.js"
-  },
-  "scripts": {
-    "cli": "node ./cli.js",
-    "run:publish": "npm publish"
-  },
+  "scripts": {},
   "dependencies": {
-    "@vadistic/eslint-config-react": "^0.1.3",
-    "@vadistic/prettier-config": "^0.1.3",
-    "node-plop": "^0.22.0",
-    "ts-node": "*",
-    "typescript": "*"
+    "fs-extra": "^8.1.0",
+    "globby": "^10.0.1",
+    "open": "^7.0.0"
   },
   "devDependencies": {}
 }
