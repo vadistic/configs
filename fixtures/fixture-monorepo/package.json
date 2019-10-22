@@ -2,7 +2,7 @@
   "name": "@vadistic/fixture-monorepo",
   "description": "x",
   "author": "Jakub Wadas <vadistic@gmail.com>",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "homepage": "https://x",
   "repository": {
@@ -19,7 +19,7 @@
     "typescript": "^3.6.4"
   },
   "dependencies": {
-    "@vadistic/eslint-config-base": "^0.1.4",
-    "@vadistic/prettier-config": "^0.1.4"
+    "@vadistic/eslint-config-base": "^0.1.5",
+    "@vadistic/prettier-config": "^0.1.5"
   }
 }
