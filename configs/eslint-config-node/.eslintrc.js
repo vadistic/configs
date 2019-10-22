@@ -7,7 +7,7 @@ module.exports = {
   },
 
   extends: [
-    '@vadistic/eslint-config',
+    '@vadistic/eslint-config-base',
   ],
 
   env: {

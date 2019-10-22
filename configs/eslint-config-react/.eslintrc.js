@@ -9,7 +9,7 @@ module.exports = {
     },
   },
 
-  extends: ['@vadistic/eslint-config', 'plugin:react/recommended'],
+  extends: ['@vadistic/eslint-config-base', 'plugin:react/recommended'],
 
   plugins: ['eslint-plugin-react', 'eslint-plugin-react-hooks'],
 
