@@ -1,7 +1,7 @@
 {
   "name": "@vadistic/eslint-config-react",
   "description": "Personal @vadistic utils",
-  "version": "0.1.6",
+  "version": "0.1.5",
   "license": "MIT",
   "homepage": "https://vadistic.netlify.com",
   "repository": {
@@ -18,7 +18,7 @@
     "lint": "eslint ./*.js"
   },
   "dependencies": {
-    "@vadistic/eslint-config-base": "^0.1.6",
+    "@vadistic/eslint-config-base": "^0.1.5",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^2.1.2"
   }
