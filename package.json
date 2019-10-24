@@ -1,6 +1,6 @@
 {
   "name": "workspace",
-  "description": "Personal @vadistic utils - scaffolding & configs for react & node monorepos with typescript",
+  "description": "Personal @vadistic workspace utils - scaffolding & configs for react & node monorepos with typescript",
   "author": "Jakub Wadas <vadistic@gmail.com>",
   "license": "MIT",
   "homepage": "https://vadistic.netlify.com",
@@ -11,7 +11,9 @@
   },
   "scripts": {
     "format": "prettier --config prettier.config.js --write './**.{js,ts,jsx,tsx,json}*'",
-    "lint": "yarn eslint --ext .js --ext .ts --ext .tsx fixtures scripts",
+    "lint": "yarn eslint --ext .js --ext .ts --ext .tsx fixtures scripts configs",
+    "build": "lerna run clean && lerna run build",
+    "prepublish": "yarn format && yarn lint && yanr build",
     "copy:dotfiles": "sh fixtures/copy-dotfiles.sh"
   },
   "workspaces": [

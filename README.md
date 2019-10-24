@@ -1,6 +1,8 @@
 # @vadistic/utils
 
-Personal @vadistic utils - scaffolding & configs for react & node monorepos with typescript. Inspired by https://github.com/microsoft/just & https://github.com/nrwl/nx
+> Personal @vadistic workspace utils - scaffolding & configs for react & node monorepos with typescript
+
+Inspired by https://github.com/microsoft/just & https://github.com/nrwl/nx
 
 ## Why
 

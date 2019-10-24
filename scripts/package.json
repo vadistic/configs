@@ -5,15 +5,19 @@
   "version": "0.1.5",
   "license": "MIT",
   "homepage": "https://vadistic.netlify.com",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/vadistic/workspace"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
   },
   "bin": {
     "task": "dist/runner/cli.js"
   },
   "scripts": {
+    "clean": "rm -rf dist",
     "build": "tsc -p ./tsconfig.build.json",
     "cli": "node dist/runner/cli.js"
   },
