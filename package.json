@@ -10,10 +10,11 @@
     "url": "https://github.com/vadistic/workspace"
   },
   "scripts": {
-    "format": "prettier --config prettier.config.js --write './**.{js,ts,jsx,tsx,json}*'",
-    "lint": "yarn eslint --ext .js --ext .ts --ext .tsx fixtures scripts configs",
-    "build": "lerna run clean && lerna run build",
-    "prepublish": "yarn format && yarn lint && yanr build",
+    "clean": "lerna run clean",
+    "lint": "lerna run lint",
+    "format": "lerna run format",
+    "build": "lerna run build",
+    "prepublish": "yarn clean && yarn format && yarn lint && yarn build",
     "copy:dotfiles": "sh fixtures/copy-dotfiles.sh"
   },
   "workspaces": [

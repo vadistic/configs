@@ -18,6 +18,8 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
+    "format": "prettier --write src/**/*.ts",
+    "lint": "eslint src/**/*.ts",
     "build": "tsc -p ./tsconfig.build.json",
     "cli": "node dist/runner/cli.js"
   },
