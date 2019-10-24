@@ -1,7 +1,7 @@
 {
   "name": "@vadistic/prettier-config",
   "description": "Personal @vadistic utils - prettier config",
-  "version": "0.1.7",
+  "version": "0.1.5",
   "license": "MIT",
   "homepage": "https://vadistic.netlify.com",
   "repository": {

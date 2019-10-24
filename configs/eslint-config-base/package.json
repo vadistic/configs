@@ -1,7 +1,7 @@
 {
   "name": "@vadistic/eslint-config-base",
   "description": "Personal @vadistic utils",
-  "version": "0.1.7",
+  "version": "0.1.6",
   "license": "MIT",
   "homepage": "https://vadistic.netlify.com",
   "repository": {
