@@ -1,7 +1,7 @@
 {
   "name": "@vadistic/eslint-config-node",
   "description": "Personal @vadistic utils",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "license": "MIT",
   "homepage": "https://vadistic.netlify.com",
   "repository": {
@@ -17,6 +17,6 @@
     "run:publish": "npm publish"
   },
   "dependencies": {
-    "@vadistic/eslint-config-base": "^0.1.5"
+    "@vadistic/eslint-config-base": "^0.1.6"
   }
 }
