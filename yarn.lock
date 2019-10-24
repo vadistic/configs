@@ -1154,6 +1154,13 @@
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
   integrity sha512-EaObqwIvayI5a8dCzhFrjKzVwKLxjoG9T6Ppd5CEo07LRKfQ8Yokw54r5+Wq7FaBQ+yXRvQAYPrHwya1/UFt9g==
 
+"@types/fs-extra@^8.0.1":
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-8.0.1.tgz#a2378d6e7e8afea1564e44aafa2e207dadf77686"
+  integrity sha512-J00cVDALmi/hJOYsunyT52Hva5TnJeKP5yd1r+mH/ZU0mbYZflR0Z5kw5kITtKTRYMhm1JMClOFYdHnQszEvqw==
+  dependencies:
+    "@types/node" "*"
+
 "@types/glob@^7.1.1":
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/@types/glob/-/glob-7.1.1.tgz#aa59a1c6e3fbc421e07ccd31a944c30eba521575"
@@ -1275,6 +1282,18 @@
     is-glob "^4.0.1"
     lodash.unescape "4.0.1"
     semver "^6.3.0"
+
+"@vadistic/eslint-config-base@file:configs/eslint-config-base":
+  version "0.1.5"
+  dependencies:
+    "@typescript-eslint/eslint-plugin" "^2.5.0"
+    "@typescript-eslint/parser" "^2.5.0"
+    eslint-config-prettier "^6.4.0"
+    eslint-plugin-import "^2.18.2"
+    eslint-plugin-prettier "^3.1.1"
+
+"@vadistic/prettier-config@file:configs/prettier-config":
+  version "0.1.5"
 
 "@zkochan/cmd-shim@^3.1.0":
   version "3.1.0"

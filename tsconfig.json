@@ -9,6 +9,11 @@
     "allowJs": true,
     "noEmit": true,
 
+    "declaration": true,
+    "declarationMap": true,
+    "removeComments": true,
+    "sourceMap": true,
+
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
 

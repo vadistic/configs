@@ -10,10 +10,22 @@
     "type": "git",
     "url": "https://github.com/vadistic/workspace"
   },
-  "scripts": {},
+  "bin": {
+    "task": "dist/runner/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p ./tsconfig.build.json",
+    "cli": "node dist/runner/cli.js"
+  },
   "dependencies": {
     "fs-extra": "^8.1.0",
     "globby": "^10.0.1",
     "open": "^7.0.0"
+  },
+  "peerDependencies": {
+    "ts-node": "^8.4.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^8.0.1"
   }
 }
