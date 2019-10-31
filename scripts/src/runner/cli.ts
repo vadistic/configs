@@ -15,6 +15,11 @@ require('ts-node').register({
     experimentalDecorators: true,
     emitDecoratorMetadata: true,
   },
+
+  transpileOnly: true,
+  preferTsExts: true,
+  skipProject: true,
+  pretty: true,
 })
 
 import { runner } from './runner'

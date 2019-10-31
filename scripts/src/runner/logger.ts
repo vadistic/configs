@@ -24,7 +24,7 @@ export class Logger {
   private prefix(type: string) {
     const now = new Date()
     const offset = now.valueOf() - this.startTime.valueOf()
-    const time = `${now.getHours()}${now.getMinutes()}:${now.getSeconds()}`
+    const time = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
 
     return `[${this.ctx}:${type}][${time}+${offset}]`.padEnd(this.ctx.length + 6)
   }

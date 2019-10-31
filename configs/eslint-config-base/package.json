@@ -1,32 +1,38 @@
 {
   "name": "@vadistic/eslint-config-base",
-  "description": "Personal @vadistic utils",
   "version": "0.1.6",
-  "license": "MIT",
+  "private": false,
+  "description": "Personal @vadistic utils",
   "homepage": "https://vadistic.netlify.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/vadistic/workspace"
   },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
+  "license": "MIT",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
   "main": "index.js",
   "scripts": {
     "format": "prettier --write ./*.js",
     "lint": "eslint ./*.js"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.5.0",
-    "@typescript-eslint/parser": "^2.5.0",
-    "eslint-config-prettier": "^6.4.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-prettier": "^3.1.1"
+    "@typescript-eslint/eslint-plugin": "2.6.0",
+    "@typescript-eslint/parser": "2.6.0",
+    "eslint-config-prettier": "6.5.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-prettier": "3.1.1"
+  },
+  "devDependencies": {
+    "eslint": "6.6.0",
+    "prettier": "1.18.2",
+    "typescript": "3.7.1-rc"
   },
   "peerDependencies": {
-    "eslint": "*",
-    "prettier": "*",
-    "typescript": "*"
+    "eslint": "6.6.0",
+    "prettier": "1.18.2",
+    "typescript": "3.7.1-rc"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

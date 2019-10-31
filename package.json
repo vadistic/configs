@@ -1,34 +1,34 @@
 {
   "name": "workspace",
-  "description": "Personal @vadistic workspace utils - scaffolding & configs for react & node monorepos with typescript",
-  "author": "Jakub Wadas <vadistic@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://vadistic.netlify.com",
   "private": true,
+  "description": "Personal @vadistic workspace utils",
+  "homepage": "https://vadistic.netlify.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/vadistic/workspace"
   },
-  "scripts": {
-    "clean": "lerna run clean",
-    "lint": "lerna run lint",
-    "format": "lerna run format",
-    "build": "lerna run build",
-    "prepublish": "yarn clean && yarn format && yarn lint && yarn build",
-    "copy:dotfiles": "sh fixtures/copy-dotfiles.sh"
-  },
+  "license": "MIT",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
   "workspaces": [
-    "fixtures/*",
     "configs/*",
+    "fixtures/*",
     "scripts"
   ],
+  "scripts": {
+    "build": "lerna run --ignore @vadistic/fixture-monorepo build ",
+    "clean": "lerna run --ignore @vadistic/fixture-monorepo clean",
+    "format": "lerna run --ignore @vadistic/fixture-monorepo format",
+    "lint": "lerna run --ignore @vadistic/fixture-monorepo lint",
+    "prepublishOnly": "yarn sync && yarn clean && yarn format && yarn lint && yarn build",
+    "sync:dotfiles": "sh scripts/copy-dotfiles.sh",
+    "sync:pkg": "lerna exec 'task sync-pkg'",
+    "sync": "yarn sync:dotfiles && yarn sync:pkg"
+  },
   "devDependencies": {
-    "@vadistic/eslint-config-base": "file:configs/eslint-config-base",
-    "@vadistic/prettier-config": "file:configs/prettier-config",
-    "lerna": "^3.18.1",
-    "prettier": "^1.18.2",
-    "ts-node": "^8.4.1",
-    "typescript": "^3.6.4",
-    "eslint": "^6.5.1"
+    "eslint": "6.6.0",
+    "lerna": "3.18.3",
+    "prettier": "1.18.2",
+    "ts-node": "8.4.1",
+    "typescript": "3.7.1-rc"
   }
 }

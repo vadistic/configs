@@ -1,23 +1,24 @@
 {
   "name": "@vadistic/eslint-config-node",
-  "description": "Personal @vadistic utils",
   "version": "0.1.6",
-  "license": "MIT",
+  "private": false,
+  "description": "Personal @vadistic utils",
   "homepage": "https://vadistic.netlify.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/vadistic/workspace"
   },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
+  "license": "MIT",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
   "main": "index.js",
   "scripts": {
     "format": "prettier --write ./*.js",
     "lint": "eslint ./*.js"
   },
   "dependencies": {
-    "@vadistic/eslint-config-base": "^0.1.6"
+    "@vadistic/eslint-config-base": "0.1.6"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

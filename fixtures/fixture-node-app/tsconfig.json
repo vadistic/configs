@@ -2,15 +2,8 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "module": "commonjs",
-
     "target": "es2018",
-    "lib": ["es2018"],
-
-    "incremental": true,
-    "declaration": false,
-    "declarationMap": false,
-    "sourceMap": true,
-    "removeComments": true
+    "lib": ["esnext"]
   },
   "exclude": ["node_modules", "build", "dist"]
 }

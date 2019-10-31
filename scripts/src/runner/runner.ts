@@ -1,7 +1,8 @@
 import path from 'path'
+import { homedir } from 'os'
 import fse from 'fs-extra'
 import { Logger } from './logger'
-import { TASK_EXT, Task, TaskProps, TASK_DIR } from './types'
+import { Task, TaskProps } from './types'
 
 /**
  * Run task from local or root dir, it's jsut ts-node, but
@@ -11,12 +12,14 @@ import { TASK_EXT, Task, TaskProps, TASK_DIR } from './types'
  * - TODO: some chaining/pararel util
  */
 export const runner = async () => {
-  const logger = new Logger('runner')
-  const rootCwd = getYarnWorkspaceRoot()
-  const [cmd, sub] = process.argv[2].split(':')
+  const workspaceCwd = getWorkspaceCwd()
+  const packageCwd = getPackageCwd()
 
-  if (!rootCwd) {
-    logger.error(`could not resolve workspace cwd`)
+  const cmd = process.argv[2]
+  const logger = new Logger(cmd || 'runner')
+
+  if (!workspaceCwd || !packageCwd) {
+    logger.error(`could not resolve package/workspace cwd. Is yarn.lock present?`)
     return
   }
 
@@ -25,81 +28,73 @@ export const runner = async () => {
     return
   }
 
-  const [name, fn] = await findTask(cmd, sub, rootCwd)
+  const props: TaskProps = {
+    logger,
+    info: {
+      cmd,
+      isWorkspace: packageCwd !== workspaceCwd,
+    },
+    paths: {
+      package: packageCwd,
+      workspace: workspaceCwd,
+    },
+  }
+
+  const [name, fn] = await findTaskFile(props)
 
   if (!name || !fn) {
-    logger.error(`could not find task ${cmd + TASK_EXT}`)
+    logger.error(`could not find task '${cmd}'`)
     return
   }
 
-  await runTask(name, fn, rootCwd)
+  await runTask(props, fn)
 }
 
-/**
- * gets monorepo root path
- *
- * since I'm using yarn workspaces - it seems ok to look for yarn.lock
- */
-export const getYarnWorkspaceRoot = (maybeCwd = process.cwd(), loop = 0): string | undefined => {
-  if (loop > 5) {
+// ────────────────────────────────────────────────────────────────────────────────
+
+const homePath = homedir()
+
+export const getWorkspaceCwd = (maybeCwd = process.cwd(), loop = 0): string | undefined => {
+  if (loop > 8 || maybeCwd === homePath) {
     return
   }
 
   return fse.existsSync(path.join(maybeCwd, 'yarn.lock'))
     ? maybeCwd
-    : getYarnWorkspaceRoot(path.join(maybeCwd, '..'), loop + 1)
+    : getWorkspaceCwd(path.join(maybeCwd, '..'), loop + 1)
 }
+
+export const getPackageCwd = (maybeCwd = process.cwd(), loop = 0): string | undefined => {
+  if (loop > 8 || maybeCwd === homePath) {
+    return
+  }
+
+  return fse.existsSync(path.join(maybeCwd, 'package.json'))
+    ? maybeCwd
+    : getPackageCwd(path.join(maybeCwd, '..'), loop + 1)
+}
+
+// ────────────────────────────────────────────────────────────────────────────────
 
 /**
  * runs task fn
  */
-export const runTask = async (name: string, fn: Task, rootCwd: string) => {
-  const logger = new Logger(name)
-
-  const util: TaskProps = {
-    name,
-    rootCwd,
-    logger,
-  }
-
+export const runTask = async (props: TaskProps, fn: Task) => {
   const args = process.argv.slice(3)
 
-  logger.start()
+  props.logger.start()
 
-  const res = await fn(args, util)
+  const res = await fn(args, props)
 
-  logger.end()
+  props.logger.end()
 
   return res
 }
 
 /**
- * tries tofind task bot in process.cwd() and in workspace root
- */
-const findTask = async (cmd: string, sub: string, rootCwd: string) => {
-  const filename = cmd + TASK_EXT
-
-  const localTaskPath = path.join(process.cwd(), TASK_DIR, filename)
-  const rootTaskPath = path.join(rootCwd, TASK_DIR, filename)
-
-  const isLocalTask = fse.existsSync(localTaskPath)
-  const isRootTask = fse.existsSync(rootTaskPath)
-
-  if (isLocalTask) {
-    return import(localTaskPath).then(imp => getTask(imp, sub))
-  }
-
-  if (isRootTask) {
-    return import(rootTaskPath).then(imp => getTask(imp, sub))
-  }
-
-  return []
-}
-
-/**
  * gets task fn by name from import
  */
-const getTask = (imported: any, sub?: string): [string, Task] | [] => {
+const findTaskFn = (props: TaskProps, imported: any): [string, Task] | [] => {
   const fns: [string, Task][] = Object.entries(imported)
 
   // get first fn when only one export
@@ -107,6 +102,50 @@ const getTask = (imported: any, sub?: string): [string, Task] | [] => {
     return fns[0]
   }
 
-  // todo fn for sub names
-  return fns.find(([name]) => name === sub) || []
+  const main = props.info.cmd.split(':')[0]
+
+  // TODO: some matcher for function names
+  return fns.find(([name]) => name.match(main)) || []
+}
+
+/**
+ * tries tofind task bot in process.cwd() and in workspace root
+ */
+
+const TASK_DIR = 'scripts'
+const TASK_EXT = '.task'
+
+const TS = '.ts'
+const JS = '.js'
+
+const findTaskFile = async (props: TaskProps) => {
+  const filename = props.info.cmd + TASK_EXT
+
+  const localTaskPath = path.join(props.paths.package, TASK_DIR, filename + TS)
+  const rootTaskPath = path.join(props.paths.workspace, TASK_DIR, filename + TS)
+  const libTaskPathJs = path.join(__dirname, '..', TASK_DIR, filename + JS)
+  const libTaskPathTs = path.join(__dirname, '..', TASK_DIR, filename + TS)
+
+  const isLocalTask = () => fse.existsSync(localTaskPath)
+  const isRootTask = () => fse.existsSync(rootTaskPath)
+  const isLibTaskJs = () => fse.existsSync(libTaskPathJs)
+  const isLibTaskTs = () => fse.existsSync(libTaskPathTs)
+
+  if (isLocalTask()) {
+    return import(localTaskPath).then(imp => findTaskFn(props, imp))
+  }
+
+  if (props.info.isWorkspace && isRootTask()) {
+    return import(rootTaskPath).then(imp => findTaskFn(props, imp))
+  }
+
+  if (isLibTaskJs()) {
+    return import(libTaskPathJs).then(imp => findTaskFn(props, imp))
+  }
+
+  if (isLibTaskTs()) {
+    return import(libTaskPathTs).then(imp => findTaskFn(props, imp))
+  }
+
+  return []
 }

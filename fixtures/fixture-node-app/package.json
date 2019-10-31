@@ -1,0 +1,33 @@
+{
+  "name": "@vadistic/fixture-node-app",
+  "version": "0.1.4",
+  "private": true,
+  "description": "x",
+  "homepage": "https://vadistic.netlify.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vadistic/x"
+  },
+  "license": "MIT",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "devDependencies": {
+    "typescript": "3.7.1-rc"
+  },
+  "module": "dist/main.js",
+  "source": "scr/main.ts",
+  "scripts": {
+    "build": "tsc -b -v tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "lint": "eslint '*/**/*.{ts,tsx}'",
+    "lint:fix": "eslint '*/**/*.{ts,tsx}' --fix",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:watch": "jest --watch"
+  },
+  "engines": {
+    "node": ">= 10.x"
+  }
+}

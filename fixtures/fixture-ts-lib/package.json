@@ -1,19 +1,31 @@
 {
   "name": "@vadistic/fixture-ts-lib",
-  "description": "x",
-  "author": "Jakub Wadas <vadistic@gmail.com>",
   "version": "0.1.4",
-  "license": "MIT",
-  "homepage": "https://x",
   "private": true,
+  "description": "x",
+  "homepage": "https://vadistic.netlify.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/vadistic/x"
   },
-  "main": "dist/index.js",
+  "license": "MIT",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "module": "dist/index.js",
+  "source": "src/index.ts",
   "types": "dist/index.d.ts",
-  "scripts": {},
+  "scripts": {
+    "build": "tsc -b -v tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "lint": "eslint '*/**/*.{ts,tsx}'",
+    "lint:fix": "eslint '*/**/*.{ts,tsx}' --fix",
+    "test": "jest",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:watch": "jest --watch"
+  },
   "devDependencies": {
-    "typescript": "^3.6.4"
+    "typescript": "3.7.1-rc"
   }
 }

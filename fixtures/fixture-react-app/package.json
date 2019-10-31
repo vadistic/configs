@@ -1,23 +1,49 @@
 {
   "name": "@vadistic/fixture-react-app",
-  "description": "x",
-  "author": "Jakub Wadas <vadistic@gmail.com>",
-  "version": "0.1.4",
-  "license": "MIT",
-  "homepage": "https://x",
+  "version": "0.1.0",
   "private": true,
+  "description": "x",
+  "homepage": "https://vadistic.netlify.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/vadistic/x"
   },
-  "scripts": {},
+  "license": "MIT",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "scripts": {
+    "build": "react-scripts build",
+    "clean": "rm -rf dist",
+    "dev": "react-scripts start",
+    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "lint:fix": "eslint '*/**/*.{ts,tsx}' --fix",
+    "lint": "eslint '*/**/*.{ts,tsx}'",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test:cov": "react-scripts test --coverage",
+    "test:watch": "react-scripts test --watch",
+    "test": "react-scripts test"
+  },
+  "browserslist": {
+    "production": [
+      ">0.75%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "dependencies": {
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2"
+    "react": "16.11.0",
+    "react-dom": "16.11.0"
   },
   "devDependencies": {
-    "@types/react": "^16.9.9",
-    "@types/react-dom": "^16.9.2",
-    "typescript": "^3.6.4"
+    "@types/jest": "24.0.21",
+    "@types/node": "12.12.3",
+    "@types/react": "16.9.11",
+    "@types/react-dom": "16.9.3",
+    "react-scripts": "3.2.0",
+    "typescript": "3.7.1-rc"
   }
 }

@@ -1,17 +1,15 @@
 {
   "name": "@vadistic/prettier-config",
-  "description": "Personal @vadistic utils - prettier config",
   "version": "0.1.6",
-  "license": "MIT",
+  "private": false,
+  "description": "Personal @vadistic utils - prettier config",
   "homepage": "https://vadistic.netlify.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/vadistic/workspace"
   },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
+  "license": "MIT",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
   "main": "index.js",
   "scripts": {
     "format": "prettier --write ./*.js",
@@ -19,5 +17,8 @@
   },
   "peerDependencies": {
     "prettier": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

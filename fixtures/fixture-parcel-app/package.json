@@ -1,0 +1,42 @@
+{
+  "name": "@vadistic/fixture-parcel-app",
+  "version": "0.1.4",
+  "private": true,
+  "description": "x",
+  "homepage": "https://vadistic.netlify.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vadistic/x"
+  },
+  "license": "MIT",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "scripts": {
+    "build": "parcel build src/index.html",
+    "dev": "parcel serve src/index.html",
+    "clean": "rm -rf dist",
+    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "lint": "eslint '*/**/*.{ts,tsx}'",
+    "lint:fix": "eslint '*/**/*.{ts,tsx}' --fix",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "react": "16.11.0",
+    "react-dom": "16.11.0"
+  },
+  "devDependencies": {
+    "@types/react": "16.9.11",
+    "@types/react-dom": "16.9.3",
+    "@types/webpack-env": "1.14.1",
+    "parcel": "2.0.0-alpha.2.1",
+    "typescript": "3.7.1-rc"
+  },
+  "browserList": [
+    ">0.25%",
+    "not ie 11",
+    "not op_mini all"
+  ]
+}

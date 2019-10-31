@@ -1,37 +1,44 @@
 {
   "name": "@vadistic/scripts",
-  "description": "Personal @vadistic utils",
-  "author": "Jakub Wadas <vadistic@gmail.com>",
   "version": "0.1.6",
-  "license": "MIT",
+  "private": false,
+  "description": "Personal @vadistic utils",
   "homepage": "https://vadistic.netlify.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/vadistic/workspace"
   },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
+  "license": "MIT",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "main": "dist/index.js",
   "bin": {
     "task": "dist/runner/cli.js"
   },
   "scripts": {
-    "clean": "rm -rf dist",
-    "format": "prettier --write src/**/*.ts",
-    "lint": "eslint src/**/*.ts",
     "build": "tsc -p ./tsconfig.build.json",
-    "cli": "node dist/runner/cli.js"
+    "clean": "rm -rf dist",
+    "cli": "node dist/runner/cli.js",
+    "cli:dev": "node src/runner/cli.js",
+    "format": "prettier --write src/**/*.ts",
+    "lint": "eslint src/**/*.ts"
   },
   "dependencies": {
-    "fs-extra": "^8.1.0",
-    "globby": "^10.0.1",
-    "open": "^7.0.0"
-  },
-  "peerDependencies": {
-    "ts-node": "^8.4.1"
+    "case": "1.6.2",
+    "cosmiconfig": "5.2.1",
+    "fs-extra": "8.1.0",
+    "globby": "10.0.1",
+    "open": "7.0.0",
+    "sort-package-json": "1.22.1"
   },
   "devDependencies": {
-    "@types/fs-extra": "^8.0.1"
+    "@types/fs-extra": "8.0.1",
+    "ts-node": "8.4.1",
+    "typescript": "3.7.1-rc"
+  },
+  "peerDependencies": {
+    "ts-node": "8.4.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

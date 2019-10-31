@@ -1,25 +1,31 @@
 {
   "name": "@vadistic/fixture-monorepo",
-  "description": "x",
-  "author": "Jakub Wadas <vadistic@gmail.com>",
   "version": "0.1.6",
-  "license": "MIT",
-  "homepage": "https://x",
+  "private": true,
+  "description": "x",
+  "homepage": "https://vadistic.netlify.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/vadistic/x"
   },
-  "private": true,
-  "scripts": {},
-  "devDependencies": {
-    "eslint": "^6.5.0",
-    "jest": "^24.9.0",
-    "lerna": "^3.17.0",
-    "prettier": "^1.18.2",
-    "typescript": "^3.6.4"
+  "license": "MIT",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "scripts": {
+    "build": "lerna run build",
+    "clean": "lerna run clean",
+    "format": "lerna run format",
+    "lint": "lerna run lint"
   },
   "dependencies": {
-    "@vadistic/eslint-config-base": "^0.1.6",
-    "@vadistic/prettier-config": "^0.1.6"
+    "@vadistic/eslint-config-base": "0.1.6",
+    "@vadistic/prettier-config": "0.1.6",
+    "@vadistic/scripts": "0.1.6"
+  },
+  "devDependencies": {
+    "eslint": "6.6.0",
+    "jest": "24.9.0",
+    "lerna": "3.18.3",
+    "prettier": "1.18.2",
+    "typescript": "3.7.1-rc"
   }
 }

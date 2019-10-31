@@ -2,6 +2,15 @@ node_modules
 build
 dist
 
+# Cache
+.next
+.cache
+.parcel-cache
+
+# Typescript
+tsconfig.build.tsbuildinfo
+tsconfig.tsbuildinfo
+
 # Logs
 logs
 *.log
