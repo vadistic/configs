@@ -11,7 +11,7 @@
   "license": "MIT",
   "author": "Jakub Wadas <vadistic@gmail.com>",
   "devDependencies": {
-    "typescript": "3.7.1-rc"
+    "typescript": "3.8.3"
   },
   "module": "dist/main.js",
   "source": "scr/main.ts",

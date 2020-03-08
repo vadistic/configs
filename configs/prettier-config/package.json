@@ -15,8 +15,8 @@
     "format": "prettier --write ./*.js",
     "lint": "eslint ./*.js"
   },
-  "peerDependencies": {
-    "prettier": "*"
+  "dependencies": {
+    "prettier": ">=1.19.1"
   },
   "publishConfig": {
     "access": "public"
