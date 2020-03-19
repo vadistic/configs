@@ -23,7 +23,11 @@ module.exports = {
     es2020: true,
     browser: true,
     jest: true,
-    node: false
+    node: false,
+  },
+
+  globals: {
+    process: true,
   },
 
   rules: {
