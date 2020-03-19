@@ -1,4 +1,4 @@
-# @vadistic/utils
+# @vadistic/workspace
 
 > Personal @vadistic workspace utils - scaffolding & configs for react & node monorepos with typescript
 
