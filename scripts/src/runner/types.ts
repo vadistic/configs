@@ -1,7 +1,7 @@
 import { Logger } from './logger'
 
 export interface TaskProps {
-  logger: Logger
+  log: Logger
   paths: TaskPaths
   info: TaskInfo
 }

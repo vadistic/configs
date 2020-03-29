@@ -16,7 +16,7 @@ require('ts-node').register({
   },
 
   transpileOnly: true,
-  preferTsExts: true,
+  preferTsExts: false,
   skipProject: true,
   pretty: true,
 })

@@ -1,31 +1,39 @@
+import { color } from './color'
+
+export type LogType = 'start' | 'end' | 'warn' | 'error' | 'log'
+
 export class Logger {
   constructor(public ctx: string, private startTime = new Date()) {}
 
   log(...msgs: string[]) {
-    console.log(this.prefix(`log`), ...msgs)
+    console.log(this.printPrefix(`log`), ...msgs.map(color.blue))
   }
 
   warn(...msgs: string[]) {
-    console.warn(this.prefix(`wrn`), ...msgs)
+    console.warn(this.printPrefix(`warn`), ...msgs.map(color.yellow))
   }
 
   error(...msgs: string[]) {
-    console.error(this.prefix(`err`), ...msgs)
+    console.error(this.printPrefix(`error`), ...msgs.map(color.red))
   }
 
-  start(...msgs: string[]) {
-    console.log(this.prefix(`srt`), ...msgs)
+  start() {
+    console.log(this.printPrefix(`start`), color.green('=> start'))
   }
 
-  end(...msgs: string[]) {
-    console.log(this.prefix(`end`), ...msgs)
+  end() {
+    console.log(this.printPrefix(`end`), color.green('=> end'))
   }
 
-  private prefix(type: string) {
+  private printPrefix(type: LogType) {
     const now = new Date()
-    const offset = now.valueOf() - this.startTime.valueOf()
-    const time = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+    const elapsed = now.valueOf() - this.startTime.valueOf()
 
-    return `[${this.ctx}:${type}][${time}+${offset}]`.padEnd(this.ctx.length + 6)
+    let res = ''
+
+    res += '[' + color.bright(this.ctx) + ']' + color.dim(`(+${elapsed})`)
+    res = res.padEnd(this.ctx.length + 6)
+
+    return res
   }
 }

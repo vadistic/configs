@@ -16,7 +16,8 @@ export const runner = async () => {
   const packageCwd = getPackageCwd()
 
   const cmd = process.argv[2]
-  const logger = new Logger(cmd || 'runner')
+  const base = path.basename(packageCwd || workspaceCwd || 'project')
+  const logger = new Logger(`${base}/${cmd || 'task'}`)
 
   if (!workspaceCwd || !packageCwd) {
     logger.error(`could not resolve package/workspace cwd. Is yarn.lock present?`)
@@ -29,7 +30,7 @@ export const runner = async () => {
   }
 
   const props: TaskProps = {
-    logger,
+    log: logger,
     info: {
       cmd,
       isWorkspace: packageCwd !== workspaceCwd,
@@ -54,12 +55,14 @@ export const runner = async () => {
 
 const homePath = homedir()
 
+const ROOT_FILES = ['yarn.lock', '.git', 'package-lock.json']
+
 export const getWorkspaceCwd = (maybeCwd = process.cwd(), loop = 0): string | undefined => {
   if (loop > 8 || maybeCwd === homePath) {
     return
   }
 
-  return fse.existsSync(path.join(maybeCwd, 'yarn.lock'))
+  return ROOT_FILES.some(file => fse.existsSync(path.join(maybeCwd, file)))
     ? maybeCwd
     : getWorkspaceCwd(path.join(maybeCwd, '..'), loop + 1)
 }
@@ -82,11 +85,11 @@ export const getPackageCwd = (maybeCwd = process.cwd(), loop = 0): string | unde
 export const runTask = async (props: TaskProps, fn: Task) => {
   const args = process.argv.slice(3)
 
-  props.logger.start()
+  props.log.start()
 
   const res = await fn(args, props)
 
-  props.logger.end()
+  props.log.end()
 
   return res
 }

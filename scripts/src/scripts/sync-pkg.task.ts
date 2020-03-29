@@ -6,7 +6,7 @@ export const sortPkg: Task = async (args, props) => {
   let pkg = await readPkg(props.paths.package)
 
   if (props.info.isWorkspace) {
-    props.logger.log(`workspace detected, importing fields from root`)
+    props.log.log(`workspace detected, importing fields from root`)
 
     const {
       dependencies,
@@ -25,5 +25,5 @@ export const sortPkg: Task = async (args, props) => {
 
   writePkg(props.paths.package, filtered)
 
-  props.logger.log(`package.json sorted!`)
+  props.log.log(`package.json sorted!`)
 }
