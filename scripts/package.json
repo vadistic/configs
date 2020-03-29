@@ -23,19 +23,16 @@
     "lint": "eslint src/**/*.ts"
   },
   "dependencies": {
-    "case": ">=1.6.2",
-    "cosmiconfig": ">=6.0.0",
-    "fs-extra": ">=8.1.0",
-    "globby": ">=11.0.0",
-    "open": ">=7.0.2",
-    "sort-package-json": ">=1.40.0"
+    "case": "^1.6.3",
+    "cosmiconfig": "^6.0.0",
+    "fs-extra": "^9.0.0",
+    "globby": "^11.0.0",
+    "open": "^7.0.3",
+    "sort-package-json": "^1.40.0"
   },
   "devDependencies": {
-    "@types/fs-extra": ">=8.1.0",
+    "@types/fs-extra": "^8.1.0",
     "ts-node": "*",
-    "typescript": ">=3.8.3"
-  },
-  "publishConfig": {
-    "access": "public"
+    "typescript": "^3.8.3"
   }
 }

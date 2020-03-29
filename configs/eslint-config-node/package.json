@@ -17,8 +17,5 @@
   },
   "dependencies": {
     "@vadistic/eslint-config-base": "^0.1.8"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

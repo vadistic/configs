@@ -11,22 +11,22 @@
   "license": "MIT",
   "author": "Jakub Wadas <vadistic@gmail.com>",
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
     "clean": "rm -rf dist",
+    "dev": "next dev",
     "format": "prettier --write '**/*.{ts,tsx}'",
     "lint": "eslint '*/**/*.{ts,tsx}'",
     "lint:fix": "eslint '*/**/*.{ts,tsx}' --fix",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "start": "next start",
     "test": "jest",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "next": "9.2.2",
-    "react": "16.13.0",
-    "react-dom": "16.13.0"
+    "next": "9.3.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
   }
 }

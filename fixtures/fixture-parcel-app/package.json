@@ -12,23 +12,23 @@
   "author": "Jakub Wadas <vadistic@gmail.com>",
   "scripts": {
     "build": "parcel build src/index.html",
-    "dev": "parcel serve src/index.html",
     "clean": "rm -rf dist",
+    "dev": "parcel serve src/index.html",
     "format": "prettier --write 'src/**/*.{ts,tsx}'",
     "lint": "eslint '*/**/*.{ts,tsx}'",
     "lint:fix": "eslint '*/**/*.{ts,tsx}' --fix",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "jest",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "react": "16.13.0",
-    "react-dom": "16.13.0"
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
   },
   "devDependencies": {
-    "@types/react": "16.9.23",
+    "@types/react": "16.9.27",
     "@types/react-dom": "16.9.5",
     "@types/webpack-env": "1.15.1",
     "parcel": "2.0.0-alpha.2.1",

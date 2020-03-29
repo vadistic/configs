@@ -19,8 +19,8 @@
     "scripts",
     "dist",
     "build",
-    "test",
-    "spec",
+    "**/test",
+    "**/spec",
     "**/*.test.ts",
     "**/*.spec.ts"
   ]

@@ -17,10 +17,7 @@
   },
   "dependencies": {
     "@vadistic/eslint-config-base": "^0.1.8",
-    "eslint-plugin-react": ">=7.19.0",
-    "eslint-plugin-react-hooks": ">=2.5.0"
-  },
-  "publishConfig": {
-    "access": "public"
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0"
   }
 }

@@ -16,9 +16,6 @@
     "lint": "eslint ./*.js"
   },
   "dependencies": {
-    "prettier": ">=1.19.1"
-  },
-  "publishConfig": {
-    "access": "public"
+    "prettier": "^2.0.2"
   }
 }

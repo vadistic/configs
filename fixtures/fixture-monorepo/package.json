@@ -16,16 +16,15 @@
     "format": "lerna run format",
     "lint": "lerna run lint"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "@vadistic/eslint-config-base": "^0.1.8",
     "@vadistic/prettier-config": "^0.1.8",
-    "@vadistic/scripts": "^0.1.8"
-  },
-  "devDependencies": {
+    "@vadistic/scripts": "^0.1.8",
     "eslint": "6.8.0",
-    "jest": "25.1.0",
+    "jest": "25.2.3",
     "lerna": "3.20.2",
-    "prettier": "1.19.1",
+    "prettier": "2.0.2",
     "typescript": "3.8.3"
   }
 }

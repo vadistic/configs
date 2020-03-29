@@ -15,12 +15,12 @@
     "clean": "rm -rf dist",
     "dev": "react-scripts start",
     "format": "prettier --write 'src/**/*.{ts,tsx}'",
-    "lint:fix": "eslint '*/**/*.{ts,tsx}' --fix",
     "lint": "eslint '*/**/*.{ts,tsx}'",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint:fix": "eslint '*/**/*.{ts,tsx}' --fix",
+    "test": "react-scripts test",
     "test:cov": "react-scripts test --coverage",
     "test:watch": "react-scripts test --watch",
-    "test": "react-scripts test"
+    "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "browserslist": {
     "production": [
@@ -35,15 +35,15 @@
     ]
   },
   "dependencies": {
-    "react": "16.13.0",
-    "react-dom": "16.13.0"
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
   },
   "devDependencies": {
     "@types/jest": "25.1.4",
-    "@types/node": "13.9.0",
-    "@types/react": "16.9.23",
+    "@types/node": "13.9.5",
+    "@types/react": "16.9.27",
     "@types/react-dom": "16.9.5",
-    "react-scripts": "3.4.0",
+    "react-scripts": "3.4.1",
     "typescript": "3.8.3"
   }
 }
