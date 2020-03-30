@@ -1,6 +1,6 @@
 The MIT License
 
-Copyright (c) 2019 Jakub Wadas
+Copyright (c) 2020 Jakub Wadas
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

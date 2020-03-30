@@ -3,7 +3,7 @@ import { color } from './color'
 export type LogType = 'start' | 'end' | 'warn' | 'error' | 'log'
 
 export class Logger {
-  constructor(public ctx: string, private startTime = new Date()) {}
+  constructor(public ctx: string, private readonly startTime = new Date()) {}
 
   log(...msgs: string[]) {
     console.log(this.printPrefix(`log`), ...msgs.map(color.blue))

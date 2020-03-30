@@ -22,9 +22,12 @@
     "prepublishOnly": "yarn sync && yarn clean && yarn format && yarn lint && yarn build",
     "sync:dotfiles": "sh scripts/copy-dotfiles.sh",
     "sync:pkg": "lerna exec 'task sync-pkg'",
-    "sync": "yarn sync:dotfiles"
+    "sync": "yarn sync:dotfiles && yarn sync:pkg"
   },
+  "dependencies": {},
   "devDependencies": {
+    "@vadistic/eslint-config-base": "0.1.8",
+    "@vadistic/prettier-config": "0.1.8",
     "eslint": "^6.8.0",
     "lerna": "^3.20.2",
     "npm-check-updates": "^4.1.0",

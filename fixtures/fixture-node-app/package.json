@@ -24,8 +24,13 @@
     "test:watch": "jest --watch",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
+  "dependencies": {},
   "devDependencies": {
-    "typescript": "3.8.3"
+    "@vadistic/eslint-config-base": "^0.1.8",
+    "eslint": "^6.8.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^2.0.2",
+    "typescript": "^3.8.3"
   },
   "engines": {
     "node": ">=10"

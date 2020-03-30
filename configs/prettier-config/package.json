@@ -12,8 +12,7 @@
   "author": "Jakub Wadas <vadistic@gmail.com>",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write ./*.js",
-    "lint": "eslint ./*.js"
+    "format": "prettier --write ./*.js"
   },
   "dependencies": {
     "prettier": "^2.0.2"

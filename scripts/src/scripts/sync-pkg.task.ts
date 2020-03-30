@@ -8,19 +8,29 @@ export const sortPkg: Task = async (args, props) => {
   if (props.info.isWorkspace) {
     props.log.log(`workspace detected, importing fields from root`)
 
-    const {
-      dependencies,
-      devDependencies,
-      peerDependencies,
-      scripts,
-      workspaces,
-      ...parent
-    } = await readPkg(props.paths.workspace)
+    // just hese fields
+    const { description, homepage, repository, license, author } = await readPkg(
+      props.paths.workspace,
+    )
 
-    pkg = { ...parent, ...pkg }
+    pkg = { description, homepage, repository, license, author, ...pkg }
   }
 
+  // add ^ to version
+  const addCarret = (field?: { [key: string]: string }) => {
+    if (field) {
+      Object.entries(field).forEach(([key, val]) => {
+        if (!isNaN(val[0] as any)) field[key] = '^' + val
+      })
+    }
+  }
+
+  addCarret(pkg.dependencies)
+  addCarret(pkg.devDependencies)
+  addCarret(pkg.peerDependencies)
+
   const sorted = await sortPkgJson(pkg)
+
   const filtered = filterUndefShallow(sorted)
 
   writePkg(props.paths.package, filtered)

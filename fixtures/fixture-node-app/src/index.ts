@@ -6,4 +6,5 @@ const handler = (req: IncomingMessage, res: ServerResponse) => {
   res.end(`Hello`)
 }
 
+// eslint-disable-next-line import/no-default-export
 export default handler

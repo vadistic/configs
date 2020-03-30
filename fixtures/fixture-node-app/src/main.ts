@@ -1,4 +1,4 @@
-export const main = async () => {
+export const main = (): void => {
   console.log(`Run server!`)
 }
 

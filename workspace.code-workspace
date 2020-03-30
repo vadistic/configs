@@ -1,0 +1,41 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "scripts"
+    },
+    {
+      "path": "fixtures/fixture-monorepo"
+    },
+    {
+      "path": "fixtures/fixture-node-app"
+    },
+    {
+      "path": "fixtures/fixture-ts-lib"
+    },
+    {
+      "path": "fixtures/fixture-next-app"
+    },
+    {
+      "path": "fixtures/fixture-parcel-app"
+    },
+    {
+      "path": "fixtures/fixture-react-app"
+    },
+    {
+      "path": "fixtures/fixture-react-lib"
+    },
+    {
+      "path": "configs/eslint-config-base"
+    },
+    {
+      "path": "configs/eslint-config-react"
+    },
+    {
+      "path": "configs/prettier-config"
+    }
+  ],
+  "settings": {}
+}

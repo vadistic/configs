@@ -16,7 +16,7 @@ export const runner = async () => {
   const packageCwd = getPackageCwd()
 
   const cmd = process.argv[2]
-  const base = path.basename(packageCwd || workspaceCwd || 'project')
+  const base = path.basename(packageCwd ?? workspaceCwd ?? 'project')
   const logger = new Logger(`${base}/${cmd || 'task'}`)
 
   if (!workspaceCwd || !packageCwd) {
@@ -62,7 +62,7 @@ export const getWorkspaceCwd = (maybeCwd = process.cwd(), loop = 0): string | un
     return
   }
 
-  return ROOT_FILES.some(file => fse.existsSync(path.join(maybeCwd, file)))
+  return ROOT_FILES.some((file) => fse.existsSync(path.join(maybeCwd, file)))
     ? maybeCwd
     : getWorkspaceCwd(path.join(maybeCwd, '..'), loop + 1)
 }
@@ -108,7 +108,7 @@ const findTaskFn = (props: TaskProps, imported: any): [string, Task] | [] => {
   const main = props.info.cmd.split(':')[0]
 
   // TODO: some matcher for function names
-  return fns.find(([name]) => name.match(main)) || []
+  return fns.find(([name]) => name.match(main)) ?? []
 }
 
 /**
@@ -135,19 +135,19 @@ const findTaskFile = async (props: TaskProps) => {
   const isLibTaskTs = () => fse.existsSync(libTaskPathTs)
 
   if (isLocalTask()) {
-    return import(localTaskPath).then(imp => findTaskFn(props, imp))
+    return import(localTaskPath).then((imp) => findTaskFn(props, imp))
   }
 
   if (props.info.isWorkspace && isRootTask()) {
-    return import(rootTaskPath).then(imp => findTaskFn(props, imp))
+    return import(rootTaskPath).then((imp) => findTaskFn(props, imp))
   }
 
   if (isLibTaskJs()) {
-    return import(libTaskPathJs).then(imp => findTaskFn(props, imp))
+    return import(libTaskPathJs).then((imp) => findTaskFn(props, imp))
   }
 
   if (isLibTaskTs()) {
-    return import(libTaskPathTs).then(imp => findTaskFn(props, imp))
+    return import(libTaskPathTs).then((imp) => findTaskFn(props, imp))
   }
 
   return []

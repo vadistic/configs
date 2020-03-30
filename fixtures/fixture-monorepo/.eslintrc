@@ -1,7 +1,0 @@
-{
-  "extends": "@vadistic/eslint-config-base",
-
-  "rules": {
-    /* noop */
-  }
-}
