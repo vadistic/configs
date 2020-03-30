@@ -1,6 +1,6 @@
 {
   "name": "@vadistic/fixture-monorepo",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "private": true,
   "description": "x",
   "homepage": "https://vadistic.netlify.com",
@@ -16,11 +16,10 @@
     "format": "lerna run format",
     "lint": "lerna run lint"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@vadistic/eslint-config-base": "^0.1.8",
-    "@vadistic/prettier-config": "^0.1.8",
-    "@vadistic/scripts": "^0.1.8",
+    "@vadistic/eslint-config-base": "^0.2.0",
+    "@vadistic/prettier-config": "^0.2.0",
+    "@vadistic/scripts": "^0.2.0",
     "eslint": "^6.8.0",
     "jest": "^25.2.3",
     "lerna": "^3.20.2",

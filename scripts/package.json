@@ -1,6 +1,6 @@
 {
   "name": "@vadistic/scripts",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "private": false,
   "description": "Personal @vadistic utils",
   "homepage": "https://vadistic.netlify.com",
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^8.1.0",
-    "@vadistic/eslint-config-base": "^0.1.8",
+    "@vadistic/eslint-config-base": "^0.2.0",
     "eslint": "^6.8.0",
     "eslint-plugin-prettier": "^3.1.2",
     "prettier": "^2.0.2",
