@@ -15,8 +15,8 @@
     "format": "prettier --write ./*.js"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.25.0",
-    "@typescript-eslint/parser": "^2.25.0",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-eslint-comments": "^3.1.2",
     "eslint-plugin-import": "^2.20.2",
@@ -25,13 +25,11 @@
   },
   "devDependencies": {
     "eslint": "^6.8.0",
-    "eslint-plugin-prettier": "^3.1.2",
     "prettier": "^2.0.2",
     "typescript": "^3.8.3"
   },
   "peerDependencies": {
     "eslint": "^6.8.0",
-    "eslint-plugin-prettier": "^3.1.2",
     "prettier": "^2.0.2",
     "typescript": "^3.8.3"
   }

@@ -10,6 +10,8 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
 
+  // there's a problem with resolution of nested config dependencies
+  // https://github.com/eslint/eslint/issues/3458
   plugins: [
     '@typescript-eslint',
     'prettier',
