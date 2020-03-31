@@ -1,8 +1,13 @@
 # @vadisitc/eslint-config-react
 
-> Personal reusable eslint react+typescript config
+> Personal eslint react+typescript config
 
 ## Usage
+
+```sh
+$ yarn add -D @vadistic/eslint-config-react
+
+```
 
 ### standard
 

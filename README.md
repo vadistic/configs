@@ -1,16 +1,12 @@
-# @vadistic/workspace
+# @vadistic/configs
 
-> Personal @vadistic workspace utils - scaffolding & configs for react & node monorepos with typescript
+> My personal @vadistic configs
 
-Inspired by https://github.com/microsoft/just & https://github.com/nrwl/nx
+It actually saves time with setup when hacking around.
 
-## Why
+## Packages
 
-- I kind of like having monorepos of tiny packages for everything
-- No-config tools like tsdx or cra are not configurable enough...
-- Buying into @nrwl/nx is just too much & I'm not a fan of angular repo style
-- I guess I like configs 🤷
-
-## Idea how to make it more or less sane?
-
-- Not yet.
+- [`@vadsitic/eslint-config-base`](https://www.npmjs.com/package/@vadistic/eslint-config-base)
+- [`@vadsitic/eslint-config-react`](https://www.npmjs.com/package/@vadistic/eslint-config-react)
+  - with a11y & preact flavours
+- [`@vadsitic/prettier-config`](https://www.npmjs.com/package/@vadistic/prettier-config)

@@ -2,7 +2,7 @@
   "name": "@vadistic/eslint-config-base",
   "version": "0.2.0",
   "private": false,
-  "description": "Personal @vadistic utils",
+  "description": "Personal @vadistic configs",
   "homepage": "https://vadistic.netlify.com",
   "repository": {
     "type": "git",
