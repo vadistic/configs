@@ -10,10 +10,16 @@
       "path": "packages/eslint-config-react"
     },
     {
-      "path": "packages/babel-config"
-    }
-    {
       "path": "packages/prettier-config"
+    },
+    {
+      "path": "packages/babel-config"
+    },
+    {
+      "path": "packages/fixture-base"
+    },
+    {
+      "path": "packages/fixture-react"
     }
   ],
   "settings": {}

@@ -1,8 +1,8 @@
-# @vadistic/configs
+# @vadistic/workspace
 
-> My personal @vadistic configs
+> My personal @vadistic configs & utils
 
-It actually saves time with setup when hacking around.
+Kind of sister repo to [@vadistic/monorepo](https://github.com/vadistic/monorepo)
 
 ## Packages
 

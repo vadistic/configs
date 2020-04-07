@@ -1,7 +1,7 @@
 {
-  "name": "@vadistic/configs",
+  "name": "@vadistic/workspace",
   "private": true,
-  "description": "Personal @vadistic configs",
+  "description": "Personal @vadistic configs & utils",
   "homepage": "https://vadistic.netlify.com",
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
     "format": "lerna run format",
     "lint": "lerna run lint",
     "pkg:sync": "tsask sync-pkg && yarn lerna exec 'tsask sync-pkg'",
-    "prepublishOnly": "yarn sync:pkg && yarn format && yarn lint"
+    "prepublishOnly": "yarn pkg:sync && yarn format && yarn lint"
   },
   "dependencies": {},
   "devDependencies": {

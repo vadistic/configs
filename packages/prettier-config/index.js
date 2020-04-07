@@ -1,2 +1,7 @@
-// eslint-disable-next-line no-undef
-module.exports = require('./prettier.config')
+module.exports = {
+  semi: false,
+  singleQuote: true,
+  tabWidth: 2,
+  trailingComma: 'all',
+  printWidth: 100,
+}

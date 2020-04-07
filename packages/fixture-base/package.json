@@ -1,0 +1,27 @@
+{
+  "name": "@vadistic/fixture-base",
+  "version": "0.2.2",
+  "private": true,
+  "description": "Personal @vadistic configs",
+  "homepage": "https://vadistic.netlify.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vadistic/configs"
+  },
+  "license": "MIT",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write src test examples",
+    "lint": "eslint --ext .ts src test examples"
+  },
+  "devDependencies": {
+    "@vadistic/eslint-config-base": "0.2.2",
+    "babel-jest": "^25.2.6",
+    "eslint": "^6.8.0",
+    "jest": "^25.2.7",
+    "prettier": "^2.0.2",
+    "ts-jest": "^25.3.1",
+    "typescript": "^3.8.3"
+  }
+}
