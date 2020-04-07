@@ -4,13 +4,16 @@
       "path": "."
     },
     {
-      "path": "configs/eslint-config-base"
+      "path": "packages/eslint-config-base"
     },
     {
-      "path": "configs/eslint-config-react"
+      "path": "packages/eslint-config-react"
     },
     {
-      "path": "configs/prettier-config"
+      "path": "packages/babel-config"
+    }
+    {
+      "path": "packages/prettier-config"
     }
   ],
   "settings": {}

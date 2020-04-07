@@ -1,0 +1,24 @@
+{
+  "name": "@vadistic/ebabel-config",
+  "version": "0.2.2",
+  "private": false,
+  "description": "Personal @vadistic configs",
+  "homepage": "https://vadistic.netlify.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vadistic/configs"
+  },
+  "license": "MIT",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write ./*.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "prettier": "^2.0.2"
+  },
+  "peerDependencies": {
+    "prettier": "^2.0.2"
+  }
+}
