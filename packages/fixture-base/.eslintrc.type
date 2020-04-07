@@ -1,0 +1,7 @@
+{
+  "extends": ["@vadistic/eslint-config-base", "@vadistic/eslint-config-base/type"],
+
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
+}

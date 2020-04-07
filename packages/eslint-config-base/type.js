@@ -1,5 +1,5 @@
 /**
- * @vadistic/eslint-config-base/type-checking
+ * @vadistic/eslint-config-base/type
  *
  * this configuration adds support for rules requiring typechecking
  */

@@ -16,7 +16,7 @@
     "format": "prettier --write src test examples",
     "lint": "eslint --ext .ts src/** test/** examples/**",
     "lint:prettier": "eslint -c .eslintrc.prettier --ext .ts src/** test/** examples/**",
-    "lint:tc": "eslint -c .eslintrc.type-checking --ext .ts src/** test/** examples/**",
+    "lint:tc": "eslint -c .eslintrc.type --ext .ts src/** test/** examples/**",
     "test": "jest"
   },
   "devDependencies": {

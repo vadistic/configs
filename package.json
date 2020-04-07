@@ -16,6 +16,7 @@
     "format": "lerna run format",
     "lint": "lerna run lint",
     "pkg:sync": "tsask sync-pkg && yarn lerna exec 'tsask sync-pkg'",
+    "pkg:ncu": "ncu -u && yarn lerna exec 'ncu -u'",
     "prepublishOnly": "yarn pkg:sync && yarn format && yarn lint"
   },
   "dependencies": {},
