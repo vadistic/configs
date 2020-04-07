@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-// Usage ./third.js < VERY_LARGE_FILE
+import readline from 'readline'
 
-const { Sema } = require('async-sema')
-const readline = require('readline')
+import { Sema } from '../src'
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -23,7 +22,7 @@ function resume() {
 
 const s = new Sema(5, { pauseFn: pause, resumeFn: resume })
 
-async function parse(line) {
+async function parse(line: string) {
   await s.acquire()
 
   console.log(line)

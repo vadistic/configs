@@ -12,11 +12,16 @@
   "author": "Jakub Wadas <vadistic@gmail.com>",
   "main": "index.js",
   "scripts": {
+    "build:tsc": "tsc -p tsconfig.build.json",
     "format": "prettier --write src test examples",
-    "lint": "eslint --ext .ts src test examples"
+    "lint": "eslint --ext .ts src/** test/** examples/**",
+    "lint:prettier": "eslint -c .eslintrc.prettier --ext .ts src/** test/** examples/**",
+    "lint:tc": "eslint -c .eslintrc.type-checking --ext .ts src/** test/** examples/**",
+    "test": "jest"
   },
   "devDependencies": {
-    "@vadistic/eslint-config-base": "0.2.2",
+    "@types/jest": "^25.2.1",
+    "@vadistic/eslint-config-base": "^0.2.2",
     "babel-jest": "^25.2.6",
     "eslint": "^6.8.0",
     "jest": "^25.2.7",

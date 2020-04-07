@@ -5,16 +5,12 @@ module.exports = {
     '@vadistic/eslint-config-base',
     'plugin:react/recommended',
     require.resolve('./react'),
-    // must be always last
-    'prettier/@typescript-eslint',
-    'plugin:prettier/recommended',
   ],
 
   // there's a problem with resolution of nested config dependencies
   // https://github.com/eslint/eslint/issues/3458
   plugins: [
     '@typescript-eslint',
-    'prettier',
     'react',
     'react-hooks',
     'jsx-a11y',

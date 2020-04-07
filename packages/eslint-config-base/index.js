@@ -1,3 +1,8 @@
+/**
+ * @vadistic/eslint-config-base
+ *
+ * this configuration adds basic config for eslint & typescript
+ */
 module.exports = {
   parser: '@typescript-eslint/parser',
 
@@ -5,20 +10,15 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
 
     'plugin:eslint-comments/recommended',
     'plugin:jest/recommended',
 
     'plugin:import/warnings',
     'plugin:import/typescript',
-
-    // must be always last
-    'prettier/@typescript-eslint',
-    'plugin:prettier/recommended',
   ],
 
-  plugins: ['@typescript-eslint', 'eslint-plugin-import', 'prettier'],
+  plugins: ['@typescript-eslint', 'eslint-plugin-import'],
 
   parserOptions: {
     ecmaVersion: 11,
@@ -43,13 +43,16 @@ module.exports = {
   },
 
   rules: {
-    // => prettier
-    'prettier/prettier': 'warn',
-
     // => eslint
+
+    // nope
 
     // => @typescript-eslint
     // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#supported-rules
+
+    // formatting
+    // TODO: only no semi ??
+    '@typescript-eslint/member-delimiter-style': 'off',
 
     // too strict
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-regexp-exec.md
@@ -74,32 +77,14 @@ module.exports = {
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extra-non-null-assertion.md
     '@typescript-eslint/no-extra-non-null-assertion': 'error',
 
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-throw-literal.md
-    '@typescript-eslint/no-throw-literal': 'error',
-
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-function-type.md
     '@typescript-eslint/prefer-function-type': 'error',
 
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/require-await.md
     '@typescript-eslint/require-await': 'off',
 
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-nullish-coalescing.md
-    '@typescript-eslint/prefer-nullish-coalescing': [
-      'error',
-      {
-        ignoreConditionalTests: true,
-        ignoreMixedLogicalExpressions: true,
-      },
-    ],
-
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-optional-chain.md
     '@typescript-eslint/prefer-optional-chain': 'error',
-
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-readonly.md
-    '@typescript-eslint/prefer-readonly': 'error',
-
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/promise-function-async.md
-    '@typescript-eslint/promise-function-async': 'error',
 
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-vars.md
     '@typescript-eslint/no-unused-vars': [
@@ -115,7 +100,16 @@ module.exports = {
     // => plugin-import
 
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md
-    'import/order': 'warn',
+    'import/order': [
+      'error',
+      {
+        groups: [
+          ['external', 'builtin'],
+          ['internal', 'index', 'sibling', 'parent'],
+        ],
+        'newlines-between': 'always',
+      },
+    ],
 
     // https://basarat.gitbooks.io/typescript/docs/tips/defaultIsBad.html
 
@@ -131,6 +125,7 @@ module.exports = {
     'import/no-extraneous-dependencies': [
       'error',
       {
+        // skip checking in scripts & tasks
         devDependencies: [
           '**/*.js',
           '**/*.test.ts',
@@ -147,9 +142,13 @@ module.exports = {
         peerDependencies: true,
       },
     ],
+
+    // => plugin-comments
+    'eslint-comments/disable-enable-pair': ['error', { allowWholeFile: true }],
   },
 
   overrides: [
+    // allow var requires in config files
     {
       files: ['*.js'],
       rules: {

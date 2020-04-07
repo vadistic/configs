@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const { Sema } = require('async-sema')
+import { Sema } from '../src'
 
-function getRnd(min, max) {
+function getRnd(min: number, max: number) {
   min = Math.ceil(min)
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min + 1)) + min

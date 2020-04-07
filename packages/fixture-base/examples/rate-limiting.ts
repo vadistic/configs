@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { RateLimit } = require('async-sema')
+import { RateLimit } from '../src'
 
 async function f() {
   console.log('Naive requests per second rate limiting')

@@ -1,4 +1,4 @@
-import EventEmitter from 'events'
+import { EventEmitter } from 'events'
 
 function arrayMove(src: any[], srcIndex: number, dst: any[], dstIndex: number, len: number) {
   for (let j = 0; j < len; ++j) {
@@ -108,13 +108,13 @@ function defaultInit() {
 }
 
 export class Sema {
-  private nrTokens: number
-  private free: Deque
-  private waiting: Deque
-  private releaseEmitter: EventEmitter
-  private noTokens: boolean
-  private pauseFn?: () => void
-  private resumeFn?: () => void
+  private readonly nrTokens: number
+  private readonly free: Deque
+  private readonly waiting: Deque
+  private readonly releaseEmitter: EventEmitter
+  private readonly noTokens: boolean
+  private readonly pauseFn?: () => void
+  private readonly resumeFn?: () => void
   private paused: boolean
 
   constructor(
@@ -168,7 +168,7 @@ export class Sema {
   }
 
   async acquire(): Promise<any> {
-    let token = this.tryAcquire()
+    const token = this.tryAcquire()
 
     if (token !== void 0) {
       return token
@@ -188,7 +188,7 @@ export class Sema {
     this.releaseEmitter.emit('release', this.noTokens ? '1' : token)
   }
 
-  drain(): Promise<any[]> {
+  async drain(): Promise<any[]> {
     const a = new Array(this.nrTokens)
     for (let i = 0; i < this.nrTokens; i++) {
       a[i] = this.acquire()
