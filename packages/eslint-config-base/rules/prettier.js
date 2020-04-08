@@ -1,8 +1,5 @@
 /**
- * @vadistic/eslint-config-base/prettier
- *
- * this configuration adds support for prettier
- * must be always last!
+ * @vadistic/eslint-config-base/rules/prettier
  */
 module.exports = {
   extends: [

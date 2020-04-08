@@ -1,7 +1,5 @@
 /**
- * @vadistic/eslint-config-base/type
- *
- * this configuration adds support for rules requiring typechecking
+ * @vadistic/eslint-config-base/rules/typechecking
  */
 module.exports = {
   extends: ['plugin:@typescript-eslint/recommended-requiring-type-checking'],
@@ -9,7 +7,9 @@ module.exports = {
   plugins: ['@typescript-eslint'],
 
   rules: {
-    // => @typescript-eslint
+    // ─────────────────────────────────────────────────────────────────
+    // @typescript-eslint
+    // ────────────────────────────────────────────────────────────────────────────────
 
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-throw-literal.md
     '@typescript-eslint/no-throw-literal': 'error',

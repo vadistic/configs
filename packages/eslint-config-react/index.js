@@ -3,7 +3,9 @@ module.exports = {
 
   extends: [
     '@vadistic/eslint-config-base',
+
     'plugin:react/recommended',
+
     require.resolve('./react'),
   ],
 
@@ -13,7 +15,6 @@ module.exports = {
     '@typescript-eslint',
     'react',
     'react-hooks',
-    'jsx-a11y',
     'eslint-plugin-import',
   ],
 
@@ -40,11 +41,11 @@ module.exports = {
 
     'import/resolver': {
       node: {
-        extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'],
+        extensions: ['.js', '.ts', '.jsx', '.tsx', '.mjs', '.json'],
       },
     },
 
-    'import/extensions': ['.js', '.ts', '.mjs', '.jsx', '.tsx'],
+    'import/extensions': ['.js', '.ts', '.jsx', '.tsx', '.mjs', '.json'],
   },
 
   globals: {

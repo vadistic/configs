@@ -16,10 +16,11 @@
     "format": "prettier --write src test examples",
     "lint": "eslint --ext .ts src/** test/** examples/**",
     "lint:prettier": "eslint -c .eslintrc.prettier --ext .ts src/** test/** examples/**",
-    "lint:tc": "eslint -c .eslintrc.type --ext .ts src/** test/** examples/**",
+    "lint:tc": "eslint -c .eslintrc.typecheck --ext .ts src/** test/** examples/**",
     "test": "jest"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
     "@types/jest": "^25.2.1",
     "@vadistic/eslint-config-base": "^0.2.2",
     "babel-jest": "^25.2.6",

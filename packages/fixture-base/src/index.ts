@@ -1,3 +1,4 @@
+/* eslint-disable no-bitwise */
 import { EventEmitter } from 'events'
 
 function arrayMove(src: any[], srcIndex: number, dst: any[], dstIndex: number, len: number) {
@@ -8,13 +9,14 @@ function arrayMove(src: any[], srcIndex: number, dst: any[], dstIndex: number, l
 }
 
 function pow2AtLeast(n: number) {
-  n = n >>> 0
-  n = n - 1
-  n = n | (n >> 1)
-  n = n | (n >> 2)
-  n = n | (n >> 4)
-  n = n | (n >> 8)
-  n = n | (n >> 16)
+  n >>>= 0
+  n -= 1
+  n |= (n >> 1)
+  n |= (n >> 2)
+  n |= (n >> 4)
+  n |= (n >> 8)
+  n |= (n >> 16)
+
   return n + 1
 }
 
@@ -26,8 +28,11 @@ function getCapacity(capacity: number) {
 // Released under the MIT License: https://github.com/petkaantonov/deque/blob/6ef4b6400ad3ba82853fdcc6531a38eb4f78c18c/LICENSE
 class Deque {
   private _capacity: number
+
   private _length: number
+
   private _front: number
+
   private arr: Array<any>
 
   constructor(capacity: number) {
@@ -109,12 +114,19 @@ function defaultInit() {
 
 export class Sema {
   private readonly nrTokens: number
+
   private readonly free: Deque
+
   private readonly waiting: Deque
+
   private readonly releaseEmitter: EventEmitter
+
   private readonly noTokens: boolean
+
   private readonly pauseFn?: () => void
+
   private readonly resumeFn?: () => void
+
   private paused: boolean
 
   constructor(
@@ -125,10 +137,10 @@ export class Sema {
       resumeFn,
       capacity = 10,
     }: {
-      initFn?: () => any
-      pauseFn?: () => void
-      resumeFn?: () => void
-      capacity?: number
+      initFn?: () => any;
+      pauseFn?: () => void;
+      resumeFn?: () => void;
+      capacity?: number;
     } = {},
   ) {
     if (isFn(pauseFn) !== isFn(resumeFn)) {
@@ -193,6 +205,7 @@ export class Sema {
     for (let i = 0; i < this.nrTokens; i++) {
       a[i] = this.acquire()
     }
+
     return Promise.all(a)
   }
 
@@ -207,8 +220,8 @@ export function RateLimit(
     timeUnit = 1000,
     uniformDistribution = false,
   }: {
-    timeUnit?: number
-    uniformDistribution?: boolean
+    timeUnit?: number;
+    uniformDistribution?: boolean;
   } = {},
 ) {
   const sema = new Sema(uniformDistribution ? 1 : rps)

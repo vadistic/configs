@@ -2,6 +2,8 @@
   "extends": ["eslint:recommended"],
 
   "rules": {
-    "no-undef": "off"
+    "no-undef": "off",
+
+    "sort-keys": ["error", "asc", { "caseSensitive": true, "natural": true }]
   }
 }
