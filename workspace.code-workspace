@@ -20,6 +20,9 @@
     },
     {
       "path": "packages/fixture-react"
+    },
+    {
+      "path": "packages/pika-plugin-publish-config"
     }
   ],
   "settings": {}
