@@ -62,6 +62,8 @@ test('Pausing works', () => {
 
 test('initFn is called properly', () => {
   const initFn = jest.fn(() => 't')
+
+  // eslint-disable-next-line no-new
   new Sema(3, { initFn })
 
   expect(initFn).toHaveReturnedTimes(3)

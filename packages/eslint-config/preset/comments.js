@@ -5,5 +5,4 @@ module.exports = {
 
   rules: {
     'eslint-comments/disable-enable-pair': ['error', { allowWholeFile: true }],
-  },
-}
+  },}

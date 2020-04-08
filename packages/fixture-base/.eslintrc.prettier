@@ -1,3 +1,3 @@
 {
-  "extends": ["@vadistic/eslint-config-base", "@vadistic/eslint-config-base/rules/prettier"]
+  "extends": ["@vadistic/eslint-config-base", "@vadistic/eslint-config-base/preset/prettier"]
 }

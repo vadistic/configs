@@ -1,10 +1,18 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable max-classes-per-file */
 /* eslint-disable no-bitwise */
 import { EventEmitter } from 'events'
 
-function arrayMove(src: any[], srcIndex: number, dst: any[], dstIndex: number, len: number) {
+function arrayMove(
+  src: unknown[],
+  srcIndex: number,
+  dst: unknown[],
+  dstIndex: number,
+  len: number,
+) {
   for (let j = 0; j < len; ++j) {
     dst[j + dstIndex] = src[j + srcIndex]
-    src[j + srcIndex] = void 0
+    src[j + srcIndex] = undefined
   }
 }
 
@@ -26,14 +34,14 @@ function getCapacity(capacity: number) {
 
 // Deque is based on https://github.com/petkaantonov/deque/blob/master/js/deque.js
 // Released under the MIT License: https://github.com/petkaantonov/deque/blob/6ef4b6400ad3ba82853fdcc6531a38eb4f78c18c/LICENSE
-class Deque {
+class Deque <T = unknown> {
   private _capacity: number
 
   private _length: number
 
   private _front: number
 
-  private arr: Array<any>
+  private arr: Array<T | undefined>
 
   constructor(capacity: number) {
     this._capacity = getCapacity(capacity)
@@ -42,7 +50,7 @@ class Deque {
     this.arr = []
   }
 
-  push(item: any): number {
+  push(item: T): number {
     const length = this._length
 
     this.checkCapacity(length + 1)
@@ -56,11 +64,11 @@ class Deque {
   pop() {
     const length = this._length
     if (length === 0) {
-      return void 0
+      return undefined
     }
     const i = (this._front + length - 1) & (this._capacity - 1)
     const ret = this.arr[i]
-    this.arr[i] = void 0
+    this.arr[i] = undefined
     this._length = length - 1
 
     return ret
@@ -69,11 +77,11 @@ class Deque {
   shift() {
     const length = this._length
     if (length === 0) {
-      return void 0
+      return undefined
     }
     const front = this._front
     const ret = this.arr[front]
-    this.arr[front] = void 0
+    this.arr[front] = undefined
     this._front = (front + 1) & (this._capacity - 1)
     this._length = length - 1
 
@@ -104,7 +112,8 @@ class Deque {
 
 class ReleaseEmitter extends EventEmitter {}
 
-function isFn(x: any) {
+
+function isFn(x: unknown) {
   return typeof x === 'function'
 }
 
@@ -115,9 +124,9 @@ function defaultInit() {
 export class Sema {
   private readonly nrTokens: number
 
-  private readonly free: Deque
+  private readonly free: Deque<unknown>
 
-  private readonly waiting: Deque
+  private readonly waiting: Deque<unknown>
 
   private readonly releaseEmitter: EventEmitter
 
@@ -137,10 +146,10 @@ export class Sema {
       resumeFn,
       capacity = 10,
     }: {
-      initFn?: () => any;
-      pauseFn?: () => void;
-      resumeFn?: () => void;
-      capacity?: number;
+      initFn?: () => unknown
+      pauseFn?: () => void
+      resumeFn?: () => void
+      capacity?: number
     } = {},
   ) {
     if (isFn(pauseFn) !== isFn(resumeFn)) {
@@ -159,7 +168,9 @@ export class Sema {
     this.releaseEmitter.on('release', (token) => {
       const p = this.waiting.shift()
       if (p) {
-        p.resolve(token)
+        // FIXME: what is the type of p?
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (p as any).resolve(token)
       } else {
         if (this.resumeFn && this.paused) {
           this.paused = false
@@ -175,14 +186,14 @@ export class Sema {
     }
   }
 
-  tryAcquire(): any | undefined {
+  tryAcquire(): unknown | undefined {
     return this.free.pop()
   }
 
-  async acquire(): Promise<any> {
+  async acquire(): Promise<unknown> {
     const token = this.tryAcquire()
 
-    if (token !== void 0) {
+    if (token !== undefined) {
       return token
     }
 
@@ -196,11 +207,11 @@ export class Sema {
     })
   }
 
-  release(token?: any): void {
+  release(token?: unknown): void {
     this.releaseEmitter.emit('release', this.noTokens ? '1' : token)
   }
 
-  async drain(): Promise<any[]> {
+  async drain(): Promise<unknown[]> {
     const a = new Array(this.nrTokens)
     for (let i = 0; i < this.nrTokens; i++) {
       a[i] = this.acquire()
@@ -220,8 +231,8 @@ export function RateLimit(
     timeUnit = 1000,
     uniformDistribution = false,
   }: {
-    timeUnit?: number;
-    uniformDistribution?: boolean;
+    timeUnit?: number
+    uniformDistribution?: boolean
   } = {},
 ) {
   const sema = new Sema(uniformDistribution ? 1 : rps)

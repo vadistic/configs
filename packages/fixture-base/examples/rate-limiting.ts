@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-await-in-loop */
 
 import { RateLimit } from '../src'
 
@@ -18,7 +19,7 @@ async function f() {
   const hrt = process.hrtime(start)
   const elapsed = (hrt[0] * 1000 + hrt[1] / 1e6) / 1000
   const rps = n / elapsed
-  console.log(rps.toFixed(3) + ' req/s')
+  console.log(`${rps.toFixed(3)} req/s`)
 }
 
 async function g() {
@@ -37,7 +38,7 @@ async function g() {
   const hrt = process.hrtime(start)
   const elapsed = (hrt[0] * 1000 + hrt[1] / 1e6) / 1000
   const rps = n / (elapsed / 60)
-  console.log(rps.toFixed(3) + ' req/min')
+  console.log(`${rps.toFixed(3)} req/min`)
 }
 
 async function h() {
@@ -55,7 +56,7 @@ async function h() {
   const hrt = process.hrtime(start)
   const elapsed = (hrt[0] * 1000 + hrt[1] / 1e6) / 1000
   const rps = n / elapsed
-  console.log(rps.toFixed(3) + ' req/s')
+  console.log(`${rps.toFixed(3)} req/s`)
 }
 
 f()

@@ -1,6 +1,4 @@
 module.exports = {
-  plugins: ['react'],
-
   setting: {
     react: {
       pragma: 'h',
@@ -10,12 +8,13 @@ module.exports = {
     },
   },
 
+  // eslint-disable-next-line sort-keys
   rules: {
     // Legacy APIs not supported in Preact:
-    'react/no-did-mount-set-state': 2,
-    'react/no-did-update-set-state': 2,
-    'react/no-find-dom-node': 2,
-    'react/no-is-mounted': 2,
-    'react/no-string-refs': 2,
+    'react/no-did-mount-set-state': "error",
+    'react/no-did-update-set-state': "error",
+    'react/no-find-dom-node': "error",
+    'react/no-is-mounted': "error",
+    'react/no-string-refs': "error",
   },
 }

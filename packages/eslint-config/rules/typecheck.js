@@ -1,16 +1,5 @@
-/**
- * @vadistic/eslint-config-base/rules/typechecking
- */
 module.exports = {
-  extends: ['plugin:@typescript-eslint/recommended-requiring-type-checking'],
-
-  plugins: ['@typescript-eslint'],
-
   rules: {
-    // ─────────────────────────────────────────────────────────────────
-    // @typescript-eslint
-    // ────────────────────────────────────────────────────────────────────────────────
-
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-throw-literal.md
     '@typescript-eslint/no-throw-literal': 'error',
 

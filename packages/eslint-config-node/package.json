@@ -1,5 +1,5 @@
 {
-  "name": "@vadistic/eslint-config-base",
+  "name": "@vadistic/eslint-config-node",
   "version": "0.2.2",
   "private": false,
   "description": "Personal @vadistic utils",
