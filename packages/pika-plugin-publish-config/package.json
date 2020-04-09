@@ -3,17 +3,17 @@
   "version": "0.2.2",
   "private": false,
   "description": "Personal @vadistic configs",
-  "homepage": "https://vadistic.netlify.com",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vadistic/configs"
-  },
   "keywords": [
     "pika",
     "plugin",
     "publish",
     "config"
   ],
+  "homepage": "https://vadistic.netlify.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vadistic/configs"
+  },
   "license": "MIT",
   "author": "Jakub Wadas <vadistic@gmail.com>",
   "main": "index.js",
@@ -23,9 +23,12 @@
   "dependencies": {},
   "devDependencies": {
     "@pika/types": "^0.9.2",
-    "prettier": "^2.0.2"
+    "prettier": "^2.0.4"
   },
   "peerDependencies": {
-    "prettier": "^2.0.2"
+    "prettier": "^2.0.4"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

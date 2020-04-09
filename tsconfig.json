@@ -1,15 +1,19 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
-    "module": "esnext",
+    "module": "commonjs",
 
     "target": "es2018",
     "lib": ["esnext"],
 
-    "allowJs": true,
-    "noEmit": true,
+    "incremental": true,
 
+    "sourceMap": true,
+    "removeComments": false,
+    "declaration": true,
     "esModuleInterop": true,
+
+    "declarationMap": true,
     "forceConsistentCasingInFileNames": true,
 
     "experimentalDecorators": true,

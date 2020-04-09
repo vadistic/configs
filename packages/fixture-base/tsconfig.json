@@ -9,11 +9,9 @@
     "sourceMap": true,
     "removeComments": false,
     "declaration": true,
-    "declarationMap": true,
-
-    "outDir": "dist",
-
     "esModuleInterop": true,
+
+    "declarationMap": true,
     "forceConsistentCasingInFileNames": true,
 
     "experimentalDecorators": true,

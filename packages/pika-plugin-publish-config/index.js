@@ -39,8 +39,8 @@ module.exports.manifest = function (newManifest, props) {
     newManifest.private = false
   }
 
-  if(!manifest.publishOptions) {
-    newManifest.private = {access: "public", ...options}
+  if(!manifest.publishConfig) {
+    newManifest.publishConfig = {access: "public", ...options}
   }
 
   return newManifest

@@ -4,8 +4,8 @@
 
 - my customisations of `eslint-config-airbnb-typescript`
 - allows to separately enable group of rules
-- all deps are deps of this pkg (without peerDeps, no other stuff required)
-- grouped into presets and rules
+- all-in-one - no peerDep plugins/configs
+- grouped into presets (setups whole thing) and rules-only exports
 
 ## Installation
 

@@ -1,9 +1,10 @@
 {
-  "extends": ["eslint:recommended"],
+  "extends": ["./base"],
 
   "rules": {
     "no-undef": "off",
+    "sort-keys": ["error", "asc", { "caseSensitive": true, "natural": true }],
 
-    "sort-keys": ["error", "asc", { "caseSensitive": true, "natural": true }]
+    "global-require": "off"
   }
 }

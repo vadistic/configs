@@ -6,7 +6,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
-    "eslint-config-airbnb-typescript/base",
+    'eslint-config-airbnb-typescript/base',
 
     require.resolve('./preset/es2020'),
 

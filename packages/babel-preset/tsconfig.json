@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    // node 8
+    "target": "es2017",
+
+    "declaration": true,
+    "removeComments": true,
+
+    "declarationMap": false,
+    "sourceMap": false,
+
+    "rootDir": "src",
+    "outDir": "dist"
+  }
+}

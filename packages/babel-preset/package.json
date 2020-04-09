@@ -1,0 +1,46 @@
+{
+  "name": "@vadistic/babel-preset",
+  "version": "0.2.2",
+  "private": false,
+  "description": "Personal @vadistic configs",
+  "keywords": [
+    "babel",
+    "preset",
+    "vadistic"
+  ],
+  "homepage": "https://vadistic.netlify.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vadistic/configs"
+  },
+  "license": "MIT",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "main": "dist/index.js",
+  "types": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint --ext .ts src"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/plugin-transform-react-jsx": "^7.9.4",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-typescript": "^7.9.0",
+    "@vadistic/eslint-config": "^0.2.2",
+    "babel-plugin-dynamic-import-node": "^2.3.0",
+    "babel-plugin-transform-typescript-metadata": "^0.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "eslint": "^6.8.0",
+    "prettier": "^2.0.4",
+    "typescript": "^3.8.3"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.x"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

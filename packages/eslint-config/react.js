@@ -10,7 +10,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
 
-    "eslint-config-airbnb-typescript",
+    'eslint-config-airbnb-typescript',
 
     require.resolve('./preset/es2020'),
 

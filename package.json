@@ -15,15 +15,17 @@
   "scripts": {
     "format": "lerna run format",
     "lint": "lerna run lint",
+    "test": "lerna run test",
+    "build": "lerna run build",
     "pkg:sync": "tsask sync-pkg && yarn lerna exec 'tsask sync-pkg'",
     "pkg:ncu": "ncu -u && yarn lerna exec 'ncu -u'",
-    "prepublishOnly": "yarn pkg:sync && yarn format && yarn lint"
+    "pkg": "ncu -u && yarn lerna exec 'ncu -u'"
   },
   "dependencies": {},
   "devDependencies": {
     "@vadistic/tsask": "^0.2.2",
     "lerna": "^3.20.2",
-    "npm-check-updates": "^4.1.1",
+    "npm-check-updates": "^4.1.2",
     "prettier": "^2.0.4",
     "typescript": "^3.8.3"
   }
