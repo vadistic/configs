@@ -1,4 +1,4 @@
-import { Sema } from '../src/index'
+import { Sema } from '../src'
 
 test('s.nrWaiting() is sane', async () => {
   const s = new Sema(1)

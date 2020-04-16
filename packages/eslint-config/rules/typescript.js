@@ -21,17 +21,12 @@ module.exports = {
       },
     ],
 
+
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-empty-interface.md
     '@typescript-eslint/no-empty-interface': 'off',
 
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-explicit-any.md
-    '@typescript-eslint/no-explicit-any': [
-      'error',
-      {
-        fixToUnknown: true,
-        ignoreRestArgs: true,
-      },
-    ],
+    '@typescript-eslint/no-explicit-any': 'off',
 
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extra-non-null-assertion.md
     '@typescript-eslint/no-extra-non-null-assertion': 'error',
@@ -46,6 +41,9 @@ module.exports = {
         vars: 'all',
       },
     ],
+
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-use-before-define.md
+    '@typescript-eslint/no-use-before-define': 'off',
 
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-function-type.md
     '@typescript-eslint/prefer-function-type': 'error',

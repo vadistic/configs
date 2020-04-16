@@ -3,20 +3,6 @@ module.exports = {
 
   plugins: ['eslint-plugin-import'],
 
-  settings: {
-    'import/extensions': ['.js', '.ts', '.mjs', '.json'],
-
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.d.ts'],
-    },
-
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.ts', '.mjs', '.json'],
-      },
-    },
-  },
-
   // eslint-disable-next-line sort-keys
   rules: {
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-default-export.md
@@ -30,8 +16,8 @@ module.exports = {
         devDependencies: [
           '**/*.js',
           '**/test/**',
-          '**/tests/**',
           '**/__test__/**',
+          '**/tests/**',
           '**/__tests__/**',
           '**/spec/**',
           '**/__spec__/**',
@@ -51,6 +37,10 @@ module.exports = {
     'import/order': [
       'error',
       {
+        alphabetize: {
+          caseInsensitive: true,
+          order: 'asc',
+        },
         groups: [
           ['external', 'builtin'],
           ['internal', 'index', 'sibling', 'parent'],
