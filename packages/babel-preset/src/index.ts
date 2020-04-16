@@ -1,6 +1,7 @@
 // Inspiration: https://github.com/airbnb/nimbus/blob/master/packages/config-babel/src/index.ts
 
 /* eslint-disable no-param-reassign */
+import { NODE_TARGET, WEB_TARGET_DEV, WEB_TARGET } from './constants'
 import type {
   BabelPresetReactOptions,
   BabelPresetTypescriptOptions,
@@ -8,7 +9,6 @@ import type {
   BabelConfig,
   BabelPlugins,
 } from './types'
-import { NODE_TARGET, WEB_TARGET_DEV, WEB_TARGET } from './constants'
 
 export interface BabelPresetOptions {
   /** use esmodules
