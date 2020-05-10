@@ -1,6 +1,6 @@
 {
   "name": "@vadistic/eslint-config-react",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "private": false,
   "description": "Personal @vadistic utils",
   "keywords": [
@@ -18,7 +18,7 @@
   "author": "Jakub Wadas <vadistic@gmail.com>",
   "main": "index.js",
   "dependencies": {
-    "@vadistic/eslint-config": "^0.3.1"
+    "@vadistic/eslint-config": "^0.3.2"
   },
   "publishConfig": {
     "access": "public"
