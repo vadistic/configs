@@ -20,10 +20,10 @@
     "format": "prettier --write ./*.js"
   },
   "devDependencies": {
-    "prettier": "^2.0.4"
+    "prettier": "^2.0.5"
   },
   "peerDependencies": {
-    "prettier": "^2.0.4"
+    "prettier": "^2.0.5"
   },
   "publishConfig": {
     "access": "public"

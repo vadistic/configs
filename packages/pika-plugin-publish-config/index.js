@@ -19,11 +19,15 @@
  */
 module.exports.beforeBuild = function ({ manifest, reporter }) {
   if (manifest.private === undefined) {
-    reporter.warning('field "private" package.json is undefined! Set it to true, so only "pkg" dir can be published')
+    reporter.warning(
+      'field "private" package.json is undefined! Set it to true, so only "pkg" dir can be published',
+    )
   }
 
   if (manifest.private === false) {
-    reporter.warning('field "private" package.json is false! Set it to true, so only "pkg" dir can be published')
+    reporter.warning(
+      'field "private" package.json is false! Set it to true, so only "pkg" dir can be published',
+    )
   }
 }
 
@@ -33,14 +37,14 @@ module.exports.beforeBuild = function ({ manifest, reporter }) {
  * @returns {object}
  */
 module.exports.manifest = function (newManifest, props) {
-  const {manifest, options} = props
+  const { manifest, options } = props
 
   if (!manifest.private) {
     newManifest.private = false
   }
 
-  if(!manifest.publishConfig) {
-    newManifest.publishConfig = {access: "public", ...options}
+  if (!manifest.publishConfig) {
+    newManifest.publishConfig = { access: 'public', ...options }
   }
 
   return newManifest

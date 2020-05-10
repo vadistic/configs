@@ -13,20 +13,20 @@
     "packages/*"
   ],
   "scripts": {
+    "build": "lerna run build",
     "format": "lerna run format",
     "lint": "lerna run lint",
-    "test": "lerna run test",
-    "build": "lerna run build",
-    "pkg:sync": "tsask sync-pkg && yarn lerna exec 'tsask sync-pkg'",
+    "pkg": "yarn pkg:ncu && yarn pkg:sync",
     "pkg:ncu": "ncu -u && yarn lerna exec 'ncu -u'",
-    "pkg": "ncu -u && yarn lerna exec 'ncu -u'"
+    "pkg:sync": "tsask sync-pkg && yarn lerna exec 'tsask sync-pkg'",
+    "test": "lerna run test"
   },
   "dependencies": {},
   "devDependencies": {
     "@vadistic/tsask": "^0.2.2",
     "lerna": "^3.20.2",
-    "npm-check-updates": "^4.1.2",
-    "prettier": "^2.0.4",
+    "npm-check-updates": "^5.0.0",
+    "prettier": "^2.0.5",
     "typescript": "^3.8.3"
   }
 }
