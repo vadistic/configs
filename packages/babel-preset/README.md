@@ -10,7 +10,7 @@
 ## Installation
 
 ```sh
-  $ yarn add -D @vadsiic/babel-preset
+  $ yarn add -D @vadistic/babel-preset
 ```
 
 ## Example

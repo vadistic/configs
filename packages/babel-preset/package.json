@@ -6,17 +6,20 @@
   "keywords": [
     "babel",
     "preset",
+    "typescript",
+    "react",
+    "node",
     "vadistic"
   ],
   "homepage": "https://vadistic.netlify.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vadistic/configs"
+    "url": "https://github.com/vadistic/workspace"
   },
   "license": "MIT",
   "author": "Jakub Wadas <vadistic@gmail.com>",
   "main": "dist/index.js",
-  "types": "dist/index.js",
+  "types": "dist/index.d.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "lint": "eslint --ext .ts src"
@@ -24,14 +27,14 @@
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-decorators": "^7.8.3",
-    "@babel/plugin-transform-react-jsx": "^7.9.4",
     "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
     "@babel/preset-typescript": "^7.9.0",
-    "@vadistic/eslint-config": "^0.3.2",
     "babel-plugin-dynamic-import-node": "^2.3.3",
     "babel-plugin-transform-typescript-metadata": "^0.3.0"
   },
   "devDependencies": {
+    "@vadistic/eslint-config": "^0.3.2",
     "@babel/core": "^7.9.0",
     "eslint": "^7.0.0",
     "prettier": "^2.0.5",
