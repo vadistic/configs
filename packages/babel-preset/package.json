@@ -1,6 +1,6 @@
 {
   "name": "@vadistic/babel-preset",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "private": false,
   "description": "Personal @vadistic configs",
   "keywords": [
@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
-    "@vadistic/eslint-config": "^0.3.3",
+    "@vadistic/eslint-config": "^0.4.0",
     "eslint": "^7.4.0",
     "prettier": "^2.0.5",
     "typescript": "^3.9.6"

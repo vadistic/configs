@@ -1,6 +1,6 @@
 {
   "name": "@vadistic/fixture-base",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "private": true,
   "description": "Personal @vadistic configs",
   "homepage": "https://vadistic.netlify.com",
@@ -23,8 +23,8 @@
     "@babel/core": "^7.10.4",
     "@types/eslint": "^7.2.0",
     "@types/jest": "^26.0.3",
-    "@vadistic/babel-preset": "^0.3.3",
-    "@vadistic/eslint-config": "^0.3.3",
+    "@vadistic/babel-preset": "^0.4.0",
+    "@vadistic/eslint-config": "^0.4.0",
     "babel-jest": "^26.1.0",
     "eslint": "^7.4.0",
     "jest": "^26.1.0",
