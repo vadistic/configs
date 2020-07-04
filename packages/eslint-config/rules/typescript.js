@@ -6,6 +6,9 @@ module.exports = {
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-member-accessibility.md
     '@typescript-eslint/explicit-member-accessibility': ['error', { accessibility: 'no-public' }],
 
+    // https://github.com/typescript-eslint/typescript-eslint/blob/v3.5.0/packages/eslint-plugin/docs/rules/explicit-module-boundary-types.md
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/member-delimiter-style.md
     '@typescript-eslint/member-delimiter-style': [
       'warn',
@@ -21,7 +24,6 @@ module.exports = {
       },
     ],
 
-
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-empty-interface.md
     '@typescript-eslint/no-empty-interface': 'off',
 
@@ -30,6 +32,9 @@ module.exports = {
 
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extra-non-null-assertion.md
     '@typescript-eslint/no-extra-non-null-assertion': 'error',
+
+    // FIXME: maybe turn off later, it's nice
+    '@typescript-eslint/no-unsafe-member-access': 'off',
 
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-vars.md
     '@typescript-eslint/no-unused-vars': [

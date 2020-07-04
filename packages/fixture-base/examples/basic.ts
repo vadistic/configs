@@ -25,6 +25,7 @@ async function f() {
   )
   console.log('hello')
 }
-f()
+
+void f()
   .catch((e) => console.log(e))
   .then(() => console.log('READY'))

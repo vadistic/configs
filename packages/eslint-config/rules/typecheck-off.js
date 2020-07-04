@@ -2,6 +2,8 @@ module.exports = {
   rules: {
     '@typescript-eslint/await-thenable': 'off',
 
+    '@typescript-eslint/dot-notation': 'off',
+
     '@typescript-eslint/naming-convention': 'off',
 
     '@typescript-eslint/no-base-to-string': 'off',
@@ -25,6 +27,8 @@ module.exports = {
     '@typescript-eslint/no-unnecessary-type-arguments': 'off',
 
     '@typescript-eslint/no-unnecessary-type-assertion': 'off',
+
+    '@typescript-eslint/no-unsafe-assignment': 'off',
 
     '@typescript-eslint/no-unsafe-call': 'off',
 

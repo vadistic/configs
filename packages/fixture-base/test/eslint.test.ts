@@ -11,7 +11,7 @@ describe('eslint', () => {
 
   test('base', () => {
     const config = {
-      extends: ['@vadistic/eslint-config'],
+      extends: ['@vadistic/eslint-config', '@vadistic/eslint-config/rules/typecheck-off'],
     }
 
     const engine = new CLIEngine({ useEslintrc: false, cache: false, baseConfig: config })
@@ -23,7 +23,6 @@ describe('eslint', () => {
     expect(report.results.length).toBeGreaterThan(3)
     expect(report.errorCount).toBe(0)
   })
-
 
   test('recommended', () => {
     const config = {
@@ -39,9 +38,13 @@ describe('eslint', () => {
     expect(report.errorCount).toBe(0)
   })
 
-  test('prettier', () => {
+  test('recommended prettier', () => {
     const config = {
-      extends: ['@vadistic/eslint-config', '@vadistic/eslint-config/preset/prettier'],
+      extends: [
+        '@vadistic/eslint-config/recommended',
+        '@vadistic/eslint-config/rules/typecheck-off',
+        '@vadistic/eslint-config/preset/prettier',
+      ],
     }
 
     const engine = new CLIEngine({ useEslintrc: false, cache: false, baseConfig: config })
@@ -51,10 +54,15 @@ describe('eslint', () => {
     expect(report.errorCount).toBeGreaterThan(0)
     expect(report.errorCount).toEqual(report.fixableErrorCount)
 
-    const hasOnlyPrettierErrors = report.results
+    const hasOnlyOkErrors = report.results
       .flatMap((res) => res.messages)
-      .every((msg) => msg.ruleId === 'prettier/prettier')
+      .every(
+        (msg) =>
+          msg.ruleId === 'prettier/prettier' || msg.ruleId === '@typescript-eslint/no-explicit-any',
+      )
 
-    expect(hasOnlyPrettierErrors).toBeTruthy()
+    if (!hasOnlyOkErrors) logErrReport(report)
+
+    expect(hasOnlyOkErrors).toBeTruthy()
   })
 })

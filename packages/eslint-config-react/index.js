@@ -1,22 +1,11 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
 
-  extends: [
-    '@vadistic/eslint-config-base',
-
-    'plugin:react/recommended',
-
-    require.resolve('./react'),
-  ],
+  extends: ['@vadistic/eslint-config-base', 'plugin:react/recommended', require.resolve('./react')],
 
   // there's a problem with resolution of nested config dependencies
   // https://github.com/eslint/eslint/issues/3458
-  plugins: [
-    '@typescript-eslint',
-    'react',
-    'react-hooks',
-    'eslint-plugin-import',
-  ],
+  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'eslint-plugin-import'],
 
   parserOptions: {
     ecmaVersion: 11,
@@ -61,7 +50,6 @@ module.exports = {
 
     // eslint-plugin-react
     // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
-
     'react/prefer-stateless-function': 'off',
 
     // airbnb overrides

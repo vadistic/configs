@@ -11,11 +11,10 @@
   "license": "MIT",
   "author": "Jakub Wadas <vadistic@gmail.com>",
   "main": "index.js",
-  "scripts": {},
-  "devDependencies": {
-    "prettier": "^2.0.5"
+  "scripts": {
+    "format": "prettier --write **/*.*"
   },
-  "peerDependencies": {
+  "devDependencies": {
     "prettier": "^2.0.5"
   }
 }

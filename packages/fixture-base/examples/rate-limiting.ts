@@ -59,7 +59,7 @@ async function h() {
   console.log(`${rps.toFixed(3)} req/s`)
 }
 
-f()
+void f()
   .then(g)
   .then(h)
   .catch((e) => console.log(e))

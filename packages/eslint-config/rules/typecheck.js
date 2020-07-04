@@ -1,5 +1,14 @@
 module.exports = {
   rules: {
+    '@typescript-eslint/dot-notation': [
+      'warn',
+      {
+        allowKeywords: true,
+        allowPattern: '',
+        allowPrivateClassPropertyAccess: false,
+      },
+    ],
+
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-throw-literal.md
     '@typescript-eslint/no-throw-literal': 'error',
 

@@ -8,15 +8,16 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:react/recommended',
 
     'eslint-config-airbnb-typescript',
 
-    require.resolve('./preset/es2020'),
+    require.resolve('./preset/es2020-react'),
 
-    require.resolve('./rules/typecheck-off'),
     require.resolve('./rules/style'),
     require.resolve('./rules/typescript'),
+    require.resolve('./rules/typecheck'),
     require.resolve('./rules/react'),
 
     require.resolve('./preset/import'),

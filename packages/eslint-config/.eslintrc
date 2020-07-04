@@ -1,6 +1,10 @@
 {
   "extends": ["./base"],
 
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+
   "rules": {
     "no-undef": "off",
     "sort-keys": ["error", "asc", { "caseSensitive": true, "natural": true }],

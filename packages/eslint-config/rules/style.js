@@ -44,6 +44,9 @@ module.exports = {
     // https://eslint.org/docs/rules/no-underscore-dangle
     'no-underscore-dangle': 'off',
 
+    // https://eslint.org/docs/rules/void
+    'no-void': 'off',
+
     // https://eslint.org/docs/rules/prefer-template
     'prefer-template': 'off',
   },

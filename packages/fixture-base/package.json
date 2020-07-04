@@ -15,20 +15,21 @@
     "build:babel": "yarn babel -x .ts -d dist/babel src",
     "build:tsc": "tsc -p tsconfig.build.json",
     "lint": "eslint --ext .ts src test examples",
+    "format": "prettier --write **/*.*",
     "test": "jest"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.6",
-    "@types/eslint": "^6.8.0",
-    "@types/jest": "^25.2.1",
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@types/eslint": "^7.2.0",
+    "@types/jest": "^26.0.3",
     "@vadistic/babel-preset": "^0.3.3",
     "@vadistic/eslint-config": "^0.3.3",
-    "babel-jest": "^26.0.1",
-    "eslint": "^7.0.0",
-    "jest": "^26.0.1",
+    "babel-jest": "^26.1.0",
+    "eslint": "^7.4.0",
+    "jest": "^26.1.0",
     "prettier": "^2.0.5",
-    "ts-jest": "^25.5.1",
-    "typescript": "^3.8.3"
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.9.6"
   }
 }

@@ -19,11 +19,11 @@ function arrayMove(
 function pow2AtLeast(n: number) {
   n >>>= 0
   n -= 1
-  n |= (n >> 1)
-  n |= (n >> 2)
-  n |= (n >> 4)
-  n |= (n >> 8)
-  n |= (n >> 16)
+  n |= n >> 1
+  n |= n >> 2
+  n |= n >> 4
+  n |= n >> 8
+  n |= n >> 16
 
   return n + 1
 }
@@ -34,7 +34,7 @@ function getCapacity(capacity: number) {
 
 // Deque is based on https://github.com/petkaantonov/deque/blob/master/js/deque.js
 // Released under the MIT License: https://github.com/petkaantonov/deque/blob/6ef4b6400ad3ba82853fdcc6531a38eb4f78c18c/LICENSE
-class Deque <T = unknown> {
+class Deque<T = unknown> {
   private _capacity: number
 
   private _length: number
@@ -112,7 +112,6 @@ class Deque <T = unknown> {
 
 class ReleaseEmitter extends EventEmitter {}
 
-
 function isFn(x: unknown) {
   return typeof x === 'function'
 }
@@ -169,7 +168,7 @@ export class Sema {
       const p = this.waiting.shift()
       if (p) {
         // FIXME: what is the type of p?
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
         (p as any).resolve(token)
       } else {
         if (this.resumeFn && this.paused) {
@@ -212,7 +211,7 @@ export class Sema {
   }
 
   async drain(): Promise<unknown[]> {
-    const a = new Array(this.nrTokens)
+    const a = new Array(this.nrTokens) as unknown[]
     for (let i = 0; i < this.nrTokens; i++) {
       a[i] = this.acquire()
     }
@@ -234,7 +233,7 @@ export function RateLimit(
     timeUnit?: number
     uniformDistribution?: boolean
   } = {},
-) {
+): () => Promise<void> {
   const sema = new Sema(uniformDistribution ? 1 : rps)
   const delay = uniformDistribution ? timeUnit / rps : timeUnit
 
