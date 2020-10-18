@@ -4,13 +4,13 @@
 
 - sane defaults (with decorators, metadata and class properties)
 - supports js/browser/node/react/typescript/jest/esm
-- allows using typescript typings in `babel.config.js`
-- all-in-one - no peerDep babel plugins/presets
+- typescript typings fop `babel.config.js`
+- all-in-one - no peerDeeps babel plugins/presets for syntax features
 
 ## Installation
 
 ```sh
-  $ yarn add -D @vadistic/babel-preset
+  yarn add -D @vadistic/babel-preset
 ```
 
 ## Example

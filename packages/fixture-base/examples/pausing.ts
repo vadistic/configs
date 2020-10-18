@@ -30,6 +30,6 @@ async function parse(line: string) {
   s.release()
 }
 
-rl.on('line', (line) => {
+rl.on('line', line => {
   parse(line).catch(console.error)
 })

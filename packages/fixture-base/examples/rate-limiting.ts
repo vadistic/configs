@@ -62,5 +62,5 @@ async function h() {
 void f()
   .then(g)
   .then(h)
-  .catch((e) => console.log(e))
+  .catch(e => console.log(e))
   .then(() => console.log('READY'))

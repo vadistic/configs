@@ -1,0 +1,7 @@
+{
+  "extends": ["./packages/eslint-config", "./packages/eslint-config/prettier"],
+
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
+}

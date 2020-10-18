@@ -1,27 +1,21 @@
 /* eslint-disable sort-keys */
 module.exports = {
-  parser: '@typescript-eslint/parser',
+  plugins: ['react', 'react-hooks'],
 
-  plugins: ['@typescript-eslint', 'react', 'react-hooks'],
+  extends: ['plugin:react/recommended'],
 
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:react/recommended',
+  // https://github.com/yannickcr/eslint-plugin-react#list-of-supported-rules
+  rules: {
+    'import/no-default-export': 'off',
 
-    'eslint-config-airbnb-typescript',
+    'jsx-quotes': ['error', 'prefer-double'],
 
-    require.resolve('./preset/es2020-react'),
+    // some issue with prettier
+    'react/jsx-one-expression-per-line': 'off',
 
-    require.resolve('./rules/style'),
-    require.resolve('./rules/typescript'),
-    require.resolve('./rules/typecheck'),
-    require.resolve('./rules/react'),
+    // allow classes for some cases
+    'react/prefer-stateless-function': 'off',
 
-    require.resolve('./preset/import'),
-    require.resolve('./preset/jest'),
-    require.resolve('./preset/comments'),
-  ],
+    'react/prop-types': 'off',
+  },
 }

@@ -3,7 +3,5 @@ module.exports = {
 
   plugins: ['eslint-plugin-jest'],
 
-  rules: {
-    'eslint-comments/disable-enable-pair': ['error', { allowWholeFile: true }],
-  },
+  rules: {},
 }

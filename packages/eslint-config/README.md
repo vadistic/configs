@@ -1,18 +1,17 @@
 # @vadisitc/eslint-config-base
 
-> Personal eslint typescript config for node/typescript
+> Personal tyescript-eslint configs for node & react
 
-- my customisations of `eslint-config-airbnb-typescript`
 - allows to separately enable group of rules
-- all-in-one - no peerDep plugins/configs
-- grouped into presets (setups whole thing) and rules-only exports
+- all-in-one - no peerDep plugins/configs mess
+- grouped into nice presets
 
 ## Installation
 
 ```sh
-$ yarn add -D eslint
+yarn add -D eslint
 
-$ yarn add -D @vadistic/eslint-config
+yarn add -D @vadistic/eslint-config
 
 ```
 
@@ -24,60 +23,82 @@ $ yarn add -D @vadistic/eslint-config
 
 - **`@vadistic/eslint-config/recommended`**
 
-### Presets
+- `@vadistic/eslint-config/es2020` base ()
 
-Presets extend recommended rules + plugins + my custom rules
+## Base
 
-- `@vadistic/eslint-config/preset/es2020` *[default]*
-- `@vadistic/eslint-config/preset/import` *[default]*
-- `@vadistic/eslint-config/preset/jest` *[default]*
-- `@vadistic/eslint-config/preset/prettier`
-- `@vadistic/eslint-config/preset/jsx-a11y`
-- `@vadistic/eslint-config/preset/typecheck`
+`@vadistic/eslint-config` or `@vadistic/eslint-config/base`
 
-### Rules
+Includes:
 
-Those are only custom rules - will not overwrite other stuff
+- `/es2020` (project settings)
+- `/style` (basic eslint rules)
+- `/typescript` (basic typescript rules)
+- `/import` (plugin import)
+- `/jest` (plugin jest)
+- `/comments` (plugin eslint-comments)
 
-- `@vadistic/eslint-config/rules/jsx-a11y-off` *[react]*
-- `@vadistic/eslint-config/rules/react` *[react]*
-- `@vadistic/eslint-config/rules/style` *[default]*
-- `@vadistic/eslint-config/rules/typecheck-off`*[default]*
-- `@vadistic/eslint-config/rules/typescript` *[default]*
-- `@vadistic/eslint-config/rules/jsx-a11y`
-- `@vadistic/eslint-config/rules/preact`
-- `@vadistic/eslint-config/rules/typecheck`
+Alternatively I can just import `/es2020` or build config from stractch
 
-### Example
+## All Presets
 
-Default
+Presets configue add plugins & add recommended + my custom rules
+
+Basic:
+
+- `@vadistic/eslint-config/es2020` => configure parser for es2020
+- `@vadistic/eslint-config/base` => basic default preset
+
+Guidelines:
+
+- `@vadistic/eslint-config/style` => `eslint` code style rules
+- `@vadistic/eslint-config/typescript` => `@typescript-eslint` code style rules
+
+Formating:
+
+- `@vadistic/eslint-config/prettier` => enable `eslint-plugin-prettier` & `eslint-config-prettier`
+- `@vadistic/eslint-config/format` => enable formatting rules (kinda prettier alternative)
+
+Typechecking:
+
+- `@vadistic/eslint-config/typecheck` => enable `@typescript-eslint` typechecking rules
+- `@vadistic/eslint-config/typecheck-off`=> disable all `@typescript-eslint` typechecking rules
+
+Plugins:
+
+- `@vadistic/eslint-config/jsx-a11y` => enable `eslint-plugin-jsx-a11y`
+- `@vadistic/eslint-config/jsx-a11y-off`=> disable all `eslint-plugin-jsx-a11y` (eg. for airbnb config)
+
+- `@vadistic/eslint-config/import` => enable `eslint-plugin-import`
+- `@vadistic/eslint-config/jest` => enable `eslint-plugin-jest`
+- `@vadistic/eslint-config/react` => enable `eslint-plugin-react` & `eslint-plugin-react-hooks`
+
+- `@vadistic/eslint-config/preact` => tweak react config for preact compatibility
+
+## Example
+
+### Default
 
 ```json
+// .eslintrc
 {
   "extends": ["@vadistic/eslint-config"]
 }
 ```
 
-With typechecking rules & prettier
+### With typechecking rules & prettier
 
 ```json
+// .eslintrc
 {
   "extends": [
     "@vadistic/eslint-config",
-    "@vadistic/eslint-config/preset/typecheck",
-    "@vadistic/eslint-config/preset/prettier"
+    "@vadistic/eslint-config/typecheck",
+    "@vadistic/eslint-config/prettier"
   ],
 
   "parserOptions": {
     "project": "./tsconfig.json"
   }
-}
-```
-
-Only recommended rules (no airbnb)
-
-```json
-{
-  "extends": ["@vadistic/eslint-config/recommended"]
 }
 ```

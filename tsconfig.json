@@ -8,6 +8,8 @@
 
     "incremental": true,
 
+    "allowJs": false,
+
     "sourceMap": true,
     "removeComments": false,
     "declaration": true,

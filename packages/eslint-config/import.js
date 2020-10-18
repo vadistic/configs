@@ -3,16 +3,13 @@ module.exports = {
 
   plugins: ['eslint-plugin-import'],
 
-  // eslint-disable-next-line sort-keys
+  // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules
   rules: {
-    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-default-export.md
     'import/no-default-export': 'error',
-
-    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
     'import/no-extraneous-dependencies': [
       'error',
       {
-        // skip checking in scripts & configs
+        // skip checking in scripts, tests, configs
         devDependencies: [
           '**/*.js',
           '**/test/**',
@@ -29,13 +26,10 @@ module.exports = {
         peerDependencies: true,
       },
     ],
-
-    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-useless-path-segments.md
     'import/no-useless-path-segments': 'error',
 
-    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md
     'import/order': [
-      'error',
+      'warn',
       {
         alphabetize: {
           caseInsensitive: true,
@@ -46,7 +40,6 @@ module.exports = {
       },
     ],
 
-    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md
     'import/prefer-default-export': 'off',
   },
 }

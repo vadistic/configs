@@ -1,5 +1,6 @@
-import { IGNORE_PATHS } from './constants'
 import type { BabelPresetOptions } from './index'
+
+import { IGNORE_PATHS } from './constants'
 import type { BabelConfig } from './types'
 
 const options: BabelPresetOptions = {

@@ -1,14 +1,8 @@
 {
-  "extends": ["./base"],
-
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  },
+  "extends": ["./base", "./prettier"],
 
   "rules": {
-    "no-undef": "off",
-    "sort-keys": ["error", "asc", { "caseSensitive": true, "natural": true }],
-
-    "global-require": "off"
+    "sort-keys": ["warn", "asc", { "caseSensitive": true, "natural": true }],
+    "object-property-newline": ["warn", { "allowAllPropertiesOnSameLine": false }]
   }
 }

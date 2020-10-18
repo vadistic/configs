@@ -1,28 +1,15 @@
 /* eslint-disable sort-keys */
 module.exports = {
-  parser: '@typescript-eslint/parser',
-
   extends: [
-    // recommended
-    'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    require.resolve('./es2020'),
 
-    // airbnb
-    'eslint-config-airbnb-typescript/base',
+    // basic
+    require.resolve('./style'),
+    require.resolve('./typescript'),
 
-    // base
-    require.resolve('./preset/es2020'),
-
-    // overrides
-    require.resolve('./rules/style'),
-    require.resolve('./rules/typescript'),
-    require.resolve('./rules/typecheck'),
-
-    // presets
-    require.resolve('./preset/import'),
-    require.resolve('./preset/jest'),
-    require.resolve('./preset/comments'),
+    // plugins
+    require.resolve('./import'),
+    require.resolve('./jest'),
+    require.resolve('./comments'),
   ],
 }

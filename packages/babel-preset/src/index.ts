@@ -37,17 +37,20 @@ export interface BabelPresetOptions {
   env?: boolean | BabelPresetEnvOptions
 }
 
-const preset = (_api: unknown, {
-  esm = false,
-  node = false,
-  graphql = false,
+const preset = (
+  _api: unknown,
+  {
+    esm = false,
+    node = false,
+    graphql = false,
 
-  dev = process.env.NODE_NEV === 'development',
+    dev = process.env.NODE_NEV === 'development',
 
-  env = true,
-  typescript = true,
-  react = false,
-}: BabelPresetOptions): BabelConfig => {
+    env = true,
+    typescript = true,
+    react = false,
+  }: BabelPresetOptions,
+): BabelConfig => {
   // just in case for babel
   if (!process.env.NODE_ENV) {
     process.env.NODE_ENV = 'development'
@@ -65,7 +68,6 @@ const preset = (_api: unknown, {
     ['@babel/plugin-proposal-class-properties', { loose: true }],
   ]
   const presets: BabelPlugins = []
-
 
   // ENV
 
@@ -85,9 +87,10 @@ const preset = (_api: unknown, {
 
     // override for bugfixes with esmodules
     // https://babeljs.io/blog/2020/03/16/7.9.0#highlights
-    envOptions.bugfixes = typeof envOptions.targets === 'object'
-      && !Array.isArray(envOptions.targets)
-      && !!envOptions.targets?.esmodules
+    envOptions.bugfixes =
+      typeof envOptions.targets === 'object' &&
+      !Array.isArray(envOptions.targets) &&
+      !!envOptions.targets?.esmodules
 
     // override for babel-jest
     if (process.env.NODE_ENV === 'test') {
@@ -127,13 +130,11 @@ const preset = (_api: unknown, {
     plugins.push('babel-plugin-graphql-tag')
   }
 
-
   return {
     plugins,
     presets,
   }
 }
-
 
 // eslint-disable-next-line import/no-default-export
 export default preset

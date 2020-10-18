@@ -16,10 +16,10 @@ async function f() {
 
   const s = new Sema(13, { capacity: arr.length })
   await Promise.all(
-    arr.map(async (elem) => {
+    arr.map(async elem => {
       await s.acquire()
       console.log(elem, s.nrWaiting())
-      await new Promise((resolve) => setTimeout(resolve, getRnd(500, 3000)))
+      await new Promise(resolve => setTimeout(resolve, getRnd(500, 3000)))
       s.release()
     }),
   )
@@ -27,5 +27,5 @@ async function f() {
 }
 
 void f()
-  .catch((e) => console.log(e))
+  .catch(e => console.log(e))
   .then(() => console.log('READY'))

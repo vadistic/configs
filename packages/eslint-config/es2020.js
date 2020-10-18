@@ -1,14 +1,15 @@
 /* eslint-disable sort-keys */
 module.exports = {
-  parser: '@typescript-eslint/parser',
-
   extends: [],
 
-  plugins: ['@typescript-eslint'],
+  parser: '@typescript-eslint/parser',
 
   parserOptions: {
     ecmaVersion: 11,
     sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
 
   env: {
@@ -18,13 +19,15 @@ module.exports = {
     jest: true,
   },
 
-  rules: {},
+  globals: {
+    process: true,
+  },
 
   overrides: [
-    // allow var requires in config files
     {
       files: ['*.js'],
       rules: {
+        // allow var requires in config files
         '@typescript-eslint/no-var-requires': 'off',
       },
     },

@@ -164,12 +164,12 @@ export class Sema {
     this.resumeFn = resumeFn
     this.paused = false
 
-    this.releaseEmitter.on('release', (token) => {
+    this.releaseEmitter.on('release', token => {
       const p = this.waiting.shift()
       if (p) {
         // FIXME: what is the type of p?
         // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-        (p as any).resolve(token)
+        ;(p as any).resolve(token)
       } else {
         if (this.resumeFn && this.paused) {
           this.paused = false
