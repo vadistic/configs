@@ -1,6 +1,6 @@
 {
   "name": "@vadistic/eslint-config",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": false,
   "description": "Personal @vadistic configs",
   "keywords": [

@@ -1,6 +1,6 @@
 {
   "name": "@vadistic/fixture-base",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "description": "Personal @vadistic configs",
   "homepage": "https://vadistic.netlify.com",
@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@types/eslint": "^7.2.4",
-    "@vadistic/eslint-config": "0.4.0",
+    "@vadistic/eslint-config": "^0.5.0",
     "eslint": "^7.11.0"
   }
 }
