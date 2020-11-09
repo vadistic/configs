@@ -21,8 +21,10 @@
   "main": "dist/index.js",
   "types": "dist/index.d.js",
   "scripts": {
+    "clean": "rm -rf dist *.tsbuildinfo",
     "build": "tsc -p tsconfig.json",
-    "lint": "eslint --ext .ts src"
+    "lint": "eslint --ext .ts src",
+    "prepublishOnly": "yarn clean && yarn build"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.12.1",

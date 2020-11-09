@@ -13,7 +13,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "lerna run build",
+    "build": "lerna run clean && lerna run build",
     "format": "lerna run format -- -l -w",
     "lint": "lerna run lint",
     "pkg": "yarn pkg:ncu && yarn pkg:sync",
