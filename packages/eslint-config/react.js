@@ -4,6 +4,12 @@ module.exports = {
 
   extends: ['plugin:react/recommended'],
 
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+
   // https://github.com/yannickcr/eslint-plugin-react#list-of-supported-rules
   rules: {
     'import/no-default-export': 'off',

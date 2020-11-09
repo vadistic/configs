@@ -1,9 +1,10 @@
+// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules
+
 module.exports = {
   extends: ['plugin:import/errors', 'plugin:import/typescript'],
 
   plugins: ['eslint-plugin-import'],
 
-  // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules
   rules: {
     'import/no-default-export': 'error',
     'import/no-extraneous-dependencies': [

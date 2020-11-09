@@ -4,10 +4,6 @@ module.exports = {
   // https://eslint.org/docs/rules/
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules
   rules: {
-    //
-    // ─── ELINST ──────────────────────────────────────────────────────
-    //
-
     'max-classes-per-file': 'off',
 
     'no-console': 'off',
@@ -38,16 +34,8 @@ module.exports = {
       },
     ],
 
-    'no-underscore-dangle': [
-      'warn',
-      {
-        allowAfterSuper: false,
-        allowAfterThis: true,
-        allowAfterThisConstructor: false,
-        allowFunctionParams: true,
-        enforceInMethodNames: false,
-      },
-    ],
+    // off, mostyl because it breaks tsdx
+    'no-underscore-dangle': 'off',
 
     'no-void': 'off',
 

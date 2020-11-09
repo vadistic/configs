@@ -1,28 +1,28 @@
-/* eslint-disable sort-keys */
 module.exports = {
-  extends: [],
-
-  parser: '@typescript-eslint/parser',
-
-  parserOptions: {
-    ecmaVersion: 11,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
-
   env: {
-    es2020: true,
-    node: true,
     browser: true,
+    es2020: true,
     jest: true,
+    node: true,
   },
+
+  extends: [],
 
   globals: {
     process: true,
   },
 
+  parser: '@typescript-eslint/parser',
+
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 11,
+    sourceType: 'module',
+  },
+
+  // eslint-disable-next-line sort-keys
   overrides: [
     {
       files: ['*.js'],
