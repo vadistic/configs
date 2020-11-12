@@ -21,6 +21,8 @@ module.exports = {
           '**/__spec__/**',
           '**/*.test.ts',
           '**/*.spec.ts',
+          '**/*.test.tsx',
+          '**/*.spec.tsx',
           '**/scripts/**',
         ],
         optionalDependencies: true,
