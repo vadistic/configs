@@ -14,8 +14,8 @@
   "scripts": {
     "build:babel": "yarn babel -x .ts -d dist/babel src",
     "build:tsc": "tsc -p tsconfig.build.json",
-    "lint": "eslint --ext .ts src test examples",
     "format": "prettier --write **/*.*",
+    "lint": "eslint --ext .ts src test examples",
     "test": "jest"
   },
   "devDependencies": {
