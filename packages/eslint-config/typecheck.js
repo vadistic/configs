@@ -1,5 +1,5 @@
 module.exports = {
-  exrends: ['plugin:@typescript-eslint/recommended-requiring-type-checking'],
+  extends: ['plugin:@typescript-eslint/recommended-requiring-type-checking'],
 
   rules: {
     '@typescript-eslint/dot-notation': [
