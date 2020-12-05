@@ -4,8 +4,8 @@ import { IGNORE_PATHS } from './constants'
 import type { BabelConfig } from './types'
 
 const options: BabelPresetOptions = {
-  node: true,
   typescript: true,
+  node: true,
 }
 
 const config: BabelConfig = {

@@ -1,7 +1,6 @@
 // Inspiration: https://github.com/airbnb/nimbus/blob/master/packages/config-babel/src/index.ts
 
 /* eslint-disable no-param-reassign */
-import { NODE_TARGET, WEB_TARGET_DEV, WEB_TARGET } from './constants'
 import type {
   BabelPresetReactOptions,
   BabelPresetTypescriptOptions,
@@ -27,13 +26,13 @@ export interface BabelPresetOptions {
 
   /**
    * is development target
-   * @default process.env.NODE_NEV === 'development'
+   * @default process.env.NODE_NEV !== 'production'
    */
   dev?: boolean
 
   // presets
   react?: boolean | BabelPresetReactOptions
-  typescript?: boolean | BabelPresetTypescriptOptions
+  typescript?: boolean | (BabelPresetTypescriptOptions & { metadata?: boolean })
   env?: boolean | BabelPresetEnvOptions
 }
 
@@ -43,20 +42,28 @@ const preset = (
     esm = false,
     node = false,
     graphql = false,
-
-    dev = process.env.NODE_NEV === 'development',
-
+    dev = process.env.NODE_NEV !== 'production',
     env = true,
     typescript = true,
     react = false,
   }: BabelPresetOptions,
 ): BabelConfig => {
-  // just in case for babel
+  // just in case set envs
   if (!process.env.NODE_ENV) {
     process.env.NODE_ENV = 'development'
   }
 
-  // ugly but quick allow booleans
+  if (!process.env.BABEL_ENV) {
+    process.env.BABEL_ENV = dev ? 'development' : 'production'
+  }
+
+  if (node && react) {
+    console.warn(
+      '[@vadistic/babel-preset]: using both react and node flag does not make much sense!',
+    )
+  }
+
+  // ugly but quick to allow booleans
   if (env === true) env = {}
   if (typescript === true) typescript = {}
   if (react === true) react = {}
@@ -67,22 +74,19 @@ const preset = (
     ['@babel/plugin-proposal-decorators', { legacy: true }],
     ['@babel/plugin-proposal-class-properties', { loose: true }],
   ]
+
   const presets: BabelPlugins = []
 
   // ENV
 
-  if (env) {
+  if (typeof env === 'object') {
     const envOptions: BabelPresetEnvOptions = {
       loose: true,
       modules: esm ? false : 'commonjs',
       shippedProposals: true,
       ...env,
-    }
-
-    if (!env.targets) {
-      if (node) envOptions.targets = NODE_TARGET
-      if (!node && dev) envOptions.targets = WEB_TARGET_DEV
-      if (!node && !dev) envOptions.targets = WEB_TARGET
+      // eclude transforms that make all code slower
+      exclude: ['transform-typeof-symbol', ...(env.exclude || [])],
     }
 
     // override for bugfixes with esmodules
@@ -104,21 +108,26 @@ const preset = (
 
   // TYPESCRIPT
 
-  if (typescript) {
+  if (typeof typescript === 'object') {
     const typescriptOptions: BabelPresetTypescriptOptions = {
       // handle preact pragma??
     }
 
     presets.push(['@babel/preset-typescript', typescriptOptions])
-    plugins.push('babel-plugin-transform-typescript-metadata')
+
+    // opt-in because it's increase size!
+    if (typescript.metadata) {
+      plugins.push('babel-plugin-transform-typescript-metadata')
+    }
   }
 
   // REACT
 
-  if (react) {
+  if (typeof react === 'object') {
     const reactOptions: BabelPresetReactOptions = {
+      // react 17 runtime default
+      runtime: 'automatic',
       ...react,
-      // handle preact pragma??
     }
 
     presets.push(['@babel/preset-react', reactOptions])
