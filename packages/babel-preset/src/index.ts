@@ -117,6 +117,7 @@ const preset = (
 
   if (react) {
     const reactOptions: BabelPresetReactOptions = {
+      ...react,
       // handle preact pragma??
     }
 
