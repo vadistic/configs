@@ -19,8 +19,8 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@types/eslint": "^7.2.4",
+    "@types/eslint": "^7.2.6",
     "@vadistic/eslint-config": "^0.5.3",
-    "eslint": "^7.13.0"
+    "eslint": "^7.15.0"
   }
 }

@@ -11,12 +11,12 @@ export const IGNORE_PATHS = [
   '*.d.ts',
 ]
 
-export const NODE_TARGET = { node: '10' }
+export const NODE_TARGET = { node: '12' }
 
 export const WEB_TARGET = {
-  browsers: ['last 1 version', '> 1%', 'not ie'],
+  browsers: ['>0.2%', 'not dead', 'not op_mini all'],
 }
 
 export const WEB_TARGET_DEV = {
-  browsers: ['last 2 chrome versions'],
+  browsers: ['last 1 chrome version', 'last 1 firefox version'],
 }
