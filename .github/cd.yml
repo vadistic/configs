@@ -1,0 +1,50 @@
+name: CD
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          # pulls all commits (needed for lerna / semantic release to correctly version)
+          fetch-depth: '0'
+
+      - name: Configure CI Git User
+        run: |
+          git config --global user.name 'vadistic'
+          git config --global user.email 'vadistic@gmail.com'
+          git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_PAT@github.com/vadistic/workspace
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
+
+      - name: Install Packages
+        run: yarn install
+
+      - name: Build Packages
+        run: yarn build
+
+      - name: Test Packages
+        run: yarn test
+
+      - name: Authenticate with Registry
+        run: |
+          yarn logout
+          echo "@vadistic:registry=http://registry.npmjs.org/" > .npmrc
+          echo "registry=http://registry.npmjs.org/" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+          npm whoami
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish package
+        run: "lerna publish --yes --message 'chore: release new versions'"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
