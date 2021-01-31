@@ -37,10 +37,10 @@
     "eslint-plugin-react-hooks": "^4.2.0"
   },
   "peerDependencies": {
-    "eslint": ">=7.19"
+    "eslint": ">=7"
   },
   "optionalDependencies": {
-    "prettier": ">=2.2.1"
+    "prettier": ">=2"
   },
   "publishConfig": {
     "access": "public"

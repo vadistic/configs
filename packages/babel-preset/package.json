@@ -36,8 +36,7 @@
     "babel-plugin-transform-typescript-metadata": "^0.3.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.4",
-    "@vadistic/eslint-config": "^0.6.1"
+    "@babel/core": "^7.10.4"
   },
   "peerDependencies": {
     "@babel/core": "^7.x"

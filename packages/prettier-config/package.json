@@ -20,7 +20,7 @@
     "format": "prettier --write ./*.js"
   },
   "peerDependencies": {
-    "prettier": "^2.x"
+    "prettier": ">=2"
   },
   "publishConfig": {
     "access": "public"
