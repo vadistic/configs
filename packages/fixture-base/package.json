@@ -21,6 +21,6 @@
   "devDependencies": {
     "@types/eslint": "^7.2.6",
     "@vadistic/eslint-config": "^0.5.4",
-    "eslint": "^7.15.0"
+    "eslint": "^7.19.0"
   }
 }
