@@ -41,7 +41,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish package
-        run: "yarn lerna publish --yes --no-verify-access --message 'chore: release new versions' minor"
+        run: "yarn lerna publish --yes --no-verify-access --message 'chore: release new versions' patch"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
