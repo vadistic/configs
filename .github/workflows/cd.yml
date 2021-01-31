@@ -34,15 +34,13 @@ jobs:
 
       - name: Authenticate with Registry
         run: |
-          yarn logout
           echo "@vadistic:registry=http://registry.npmjs.org/" > .npmrc
           echo "registry=http://registry.npmjs.org/" >> .npmrc
-          npm whoami
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish package
-        run: "lerna publish --yes --message 'chore: release new versions'"
+        run: "yarn lerna publish --yes --message 'chore: release new versions' minor"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
