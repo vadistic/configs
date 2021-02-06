@@ -1,10 +1,10 @@
 # @vadisitc/eslint-config-base
 
-> Personal tyescript-eslint configs for node & react
+> Personal typescript eslint configs for node & react
 
-- allows to separately enable group of rules
-- all-in-one - no peerDep plugins/configs mess
+- all-in-one
 - grouped into nice presets
+- easy to maintain
 
 ## Installation
 
@@ -14,16 +14,6 @@ yarn add -D eslint
 yarn add -D @vadistic/eslint-config
 
 ```
-
-## Packages
-
-- **`@vadistic/eslint-config/base`**
-
-- **`@vadistic/eslint-config/react`**
-
-- **`@vadistic/eslint-config/recommended`**
-
-- `@vadistic/eslint-config/es2020` base ()
 
 ## Base
 
@@ -38,16 +28,17 @@ Includes:
 - `/jest` (plugin jest)
 - `/comments` (plugin eslint-comments)
 
-Alternatively I can just import `/es2020` or build config from stractch
+Alternatively I can just import `/es2020` or build config from scratch
 
 ## All Presets
 
-Presets configue add plugins & add recommended + my custom rules
+Presets are grouped configuration of plugins + recommended + my costom overrides
 
 Basic:
 
 - `@vadistic/eslint-config/es2020` => configure parser for es2020
 - `@vadistic/eslint-config/base` => basic default preset
+- `@vadistic/eslint-config/recommended` => same as base but only recommended rules
 
 Guidelines:
 

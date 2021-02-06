@@ -34,7 +34,6 @@ module.exports = {
       },
     ],
 
-    // off, mostyl because it breaks tsdx
     'no-underscore-dangle': 'off',
 
     'no-void': 'off',

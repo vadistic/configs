@@ -2,8 +2,6 @@
 
 > My personal @vadistic configs
 
-Complement to [@vadistic/monorepo](https://github.com/vadistic/monorepo)
-
 ## Packages
 
 [`@vadistic/eslint-config`](https://www.npmjs.com/package/@vadistic/eslint-config)
